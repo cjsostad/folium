@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <h1>Interactive Map</h1>
+    <!-- Map Container -->
+    <div id="map">
+        {{ map_html | safe }}
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Access the map object
+        var map = {{ my_map.get_name() }};
+
+        // Function to handle map clicks
+        function onMapClick(e) {
+            var lat = e.latlng.lat;
+            var lng = e.latlng.lng;
+
+            // Prompt the user for attributes
+            var attributes = prompt("Enter attributes for this point (comma-separated):");
+
+            if (attributes !== null) {
+                // Send data to the server via AJAX
+                fetch('/add_point', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        lat: lat,
+                        lng: lng,
+                        attributes: attributes
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    // Optionally, add the marker to the map without refreshing
+                    L.marker([lat, lng]).addTo(map).bindPopup(attributes);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            }
+        }
+
+        // Add click event listener to the map
+        map.on('click', onMapClick);
+    </script>
+</body>
+</html>
