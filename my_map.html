@@ -1,0 +1,3715 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c4dadd6ccf71e7604d6bb266fd898a6b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
+</head>
+<body>
+    
+    
+     <div style="
+     position: fixed; 
+     bottom: 50px; left: 50px; width: 180px; height: 130px; 
+     background-color: white; 
+     border:2px solid grey; 
+     z-index:9999; 
+     font-size:14px;
+     padding: 10px;
+     ">
+     <b>Legend</b> <br>
+     <i class="fa fa-circle" style="color:green"></i>&nbsp; Walk-In Access<br>
+     <i class="fa fa-circle" style="color:blue"></i>&nbsp; Drive-In Access<br>
+     <div style='width: 10px; height: 10px; background-color: yellow; display: inline-block;'></div>&nbsp; Paved Boat Launch<br>
+     <div style='width: 10px; height: 10px; background-color: red; display: inline-block;'></div>&nbsp; Rough Boat Launch
+     </div>
+     
+    
+     <h3 align="center" style="font-size:20px"><b>Beach Accesses and Boat Launches of Comox Valley and Beyond Map</b></h3>
+     
+    
+            <div class="folium-map" id="map_c4dadd6ccf71e7604d6bb266fd898a6b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c4dadd6ccf71e7604d6bb266fd898a6b = L.map(
+                "map_c4dadd6ccf71e7604d6bb266fd898a6b",
+                {
+                    center: [49.6923366, -124.9949615],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0a17a80aee9d51dd4d800f53f7740198 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_0a17a80aee9d51dd4d800f53f7740198.addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var tile_layer_adf55cac00fb0670056963854bbf83d3 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_adf55cac00fb0670056963854bbf83d3.addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var tile_layer_f7591b7b1f32f931358ba098258d0cbf = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_f7591b7b1f32f931358ba098258d0cbf.addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var tile_layer_7617995b80f4414cac93e60cc487cffc = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_7617995b80f4414cac93e60cc487cffc.addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var tile_layer_2b172ef7b504ca0b098fb41e63341b26 = L.tileLayer(
+                "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {"attribution": "ESRI World Imagery", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_2b172ef7b504ca0b098fb41e63341b26.addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var layer_control_b5d13e02a8d9100e5cc4b3cb55f84250_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_adf55cac00fb0670056963854bbf83d3,
+                    "cartodbpositron" : tile_layer_f7591b7b1f32f931358ba098258d0cbf,
+                    "cartodbdarkmatter" : tile_layer_7617995b80f4414cac93e60cc487cffc,
+                    "ESRI World Imagery" : tile_layer_2b172ef7b504ca0b098fb41e63341b26,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_b5d13e02a8d9100e5cc4b3cb55f84250 = L.control.layers(
+                layer_control_b5d13e02a8d9100e5cc4b3cb55f84250_layers.base_layers,
+                layer_control_b5d13e02a8d9100e5cc4b3cb55f84250_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+
+        
+    
+            var measure_control_c6d60ff021cdf12eb5a944c6d430484f = new L.Control.Measure(
+                {"position": "topright", "primaryAreaUnit": "sqmeters", "primaryLengthUnit": "meters", "secondaryAreaUnit": "acres", "secondaryLengthUnit": "miles"});
+            map_c4dadd6ccf71e7604d6bb266fd898a6b.addControl(measure_control_c6d60ff021cdf12eb5a944c6d430484f);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+    
+            var options = {
+              position: "topleft",
+              draw: {},
+              edit: {},
+            }
+            // FeatureGroup is to store editable layers.
+            var drawnItems_draw_control_f438a9f7f93099abb877b4ddb1711007 = new L.featureGroup().addTo(
+                map_c4dadd6ccf71e7604d6bb266fd898a6b
+            );
+            options.edit.featureGroup = drawnItems_draw_control_f438a9f7f93099abb877b4ddb1711007;
+            var draw_control_f438a9f7f93099abb877b4ddb1711007 = new L.Control.Draw(
+                options
+            ).addTo( map_c4dadd6ccf71e7604d6bb266fd898a6b );
+            map_c4dadd6ccf71e7604d6bb266fd898a6b.on(L.Draw.Event.CREATED, function(e) {
+                var layer = e.layer,
+                    type = e.layerType;
+                var coords = JSON.stringify(layer.toGeoJSON());
+                layer.on('click', function() {
+                    alert(coords);
+                    console.log(coords);
+                });
+                drawnItems_draw_control_f438a9f7f93099abb877b4ddb1711007.addLayer(layer);
+             });
+            map_c4dadd6ccf71e7604d6bb266fd898a6b.on('draw:created', function(e) {
+                drawnItems_draw_control_f438a9f7f93099abb877b4ddb1711007.addLayer(e.layer);
+            });
+            
+        
+    
+            var locate_control_f522226f98b9183b7fd57f11720dbb18 = L.control.locate(
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+            
+        
+    
+            var circle_marker_845ae4808d3fb2dbbd19627f681fd946 = L.circleMarker(
+                [49.89164112, -125.1322367],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_7a4193c25175c5fc1ecb6f243111750f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_905972eba6830b7fc6c3558095395e8b = $(`<div id="html_905972eba6830b7fc6c3558095395e8b" style="width: 100.0%; height: 100.0%;">Area Name: Salmon Point<br>Access Name: Oyster Garden</div>`)[0];
+                popup_7a4193c25175c5fc1ecb6f243111750f.setContent(html_905972eba6830b7fc6c3558095395e8b);
+            
+        
+
+        circle_marker_845ae4808d3fb2dbbd19627f681fd946.bindPopup(popup_7a4193c25175c5fc1ecb6f243111750f)
+        ;
+
+        
+    
+    
+            var marker_9a04a8f6d0cbe05e0ed31cd28a34f9ca = L.marker(
+                [49.89038541, -125.1276867],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_f459628532479ce30b600248f83d53d5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_9a04a8f6d0cbe05e0ed31cd28a34f9ca.setIcon(div_icon_f459628532479ce30b600248f83d53d5);
+        
+    
+        var popup_42ab302ef9f6077ecef632a39f12ca39 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9507718b8b7dcece90671bf7cf473fa0 = $(`<div id="html_9507718b8b7dcece90671bf7cf473fa0" style="width: 100.0%; height: 100.0%;">Area Name: Salmon Point<br>Access Name: Salmon Point Boat Launch<br>Boat Launch: Paved</div>`)[0];
+                popup_42ab302ef9f6077ecef632a39f12ca39.setContent(html_9507718b8b7dcece90671bf7cf473fa0);
+            
+        
+
+        marker_9a04a8f6d0cbe05e0ed31cd28a34f9ca.bindPopup(popup_42ab302ef9f6077ecef632a39f12ca39)
+        ;
+
+        
+    
+    
+            var circle_marker_f0653e662a7b7a4f46a847a1c83a825f = L.circleMarker(
+                [49.88982253, -125.1254497],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_4bb64253a72f58f93561cf802a2fd3e9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_127b52b2c8bcc2e519ef93e438e978f2 = $(`<div id="html_127b52b2c8bcc2e519ef93e438e978f2" style="width: 100.0%; height: 100.0%;">Area Name: Salmon Point<br>Access Name: Salmon Point</div>`)[0];
+                popup_4bb64253a72f58f93561cf802a2fd3e9.setContent(html_127b52b2c8bcc2e519ef93e438e978f2);
+            
+        
+
+        circle_marker_f0653e662a7b7a4f46a847a1c83a825f.bindPopup(popup_4bb64253a72f58f93561cf802a2fd3e9)
+        ;
+
+        
+    
+    
+            var circle_marker_97e0a21a844acb7e627a25f86703d3f2 = L.circleMarker(
+                [49.88853645, -125.1259185],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_97d2ee1c8615a7d8947446fe60c86ce1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a2198daa6723ac9e077ee6b7f020236e = $(`<div id="html_a2198daa6723ac9e077ee6b7f020236e" style="width: 100.0%; height: 100.0%;">Area Name: Salmon Point<br>Access Name: Kuhushan Point Trailhead</div>`)[0];
+                popup_97d2ee1c8615a7d8947446fe60c86ce1.setContent(html_a2198daa6723ac9e077ee6b7f020236e);
+            
+        
+
+        circle_marker_97e0a21a844acb7e627a25f86703d3f2.bindPopup(popup_97d2ee1c8615a7d8947446fe60c86ce1)
+        ;
+
+        
+    
+    
+            var circle_marker_c253c2f9f34d269fb29c6a48e272f6e2 = L.circleMarker(
+                [49.87055656, -125.1270856],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_d5dc6ca68db36f693fa8289c954f1060 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ba7017e8f927a3e47a2c8984236c2d12 = $(`<div id="html_ba7017e8f927a3e47a2c8984236c2d12" style="width: 100.0%; height: 100.0%;">Area Name: Oyster River Estuary<br>Access Name: Oyster River Nature Park</div>`)[0];
+                popup_d5dc6ca68db36f693fa8289c954f1060.setContent(html_ba7017e8f927a3e47a2c8984236c2d12);
+            
+        
+
+        circle_marker_c253c2f9f34d269fb29c6a48e272f6e2.bindPopup(popup_d5dc6ca68db36f693fa8289c954f1060)
+        ;
+
+        
+    
+    
+            var marker_fae0c87d72bd0dfe491d38dacdc00174 = L.marker(
+                [49.87041181, -125.1159828],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_22855bfadb7b88debf2fd7813fab9a02 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_fae0c87d72bd0dfe491d38dacdc00174.setIcon(div_icon_22855bfadb7b88debf2fd7813fab9a02);
+        
+    
+        var popup_004baf8113bce1b34e6ea17a0f428f92 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e45c21d649ff4e9427f7b3e31b75e2b2 = $(`<div id="html_e45c21d649ff4e9427f7b3e31b75e2b2" style="width: 100.0%; height: 100.0%;">Area Name: Saratoga Beach<br>Access Name: Clarkson Ave<br>Boat Launch: Paved</div>`)[0];
+                popup_004baf8113bce1b34e6ea17a0f428f92.setContent(html_e45c21d649ff4e9427f7b3e31b75e2b2);
+            
+        
+
+        marker_fae0c87d72bd0dfe491d38dacdc00174.bindPopup(popup_004baf8113bce1b34e6ea17a0f428f92)
+        ;
+
+        
+    
+    
+            var circle_marker_35b7c33bcc7ae5c384b48f14295f3cf9 = L.circleMarker(
+                [49.86798603, -125.1162631],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_cb5c84557e1d633411c234b9910a44d7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6144c939b06e8770b791dd045612af4d = $(`<div id="html_6144c939b06e8770b791dd045612af4d" style="width: 100.0%; height: 100.0%;">Area Name: Saratoga Beach<br>Access Name: Laval Road</div>`)[0];
+                popup_cb5c84557e1d633411c234b9910a44d7.setContent(html_6144c939b06e8770b791dd045612af4d);
+            
+        
+
+        circle_marker_35b7c33bcc7ae5c384b48f14295f3cf9.bindPopup(popup_cb5c84557e1d633411c234b9910a44d7)
+        ;
+
+        
+    
+    
+            var circle_marker_d2066a5b7e26d6adaa03df4f2ef16403 = L.circleMarker(
+                [49.86535321, -125.1152854],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_d1a4658d8c37726830f8355f0cd095b0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5fec86234f62c6a1837ed47314df8eab = $(`<div id="html_5fec86234f62c6a1837ed47314df8eab" style="width: 100.0%; height: 100.0%;">Area Name: Saratoga Beach<br>Access Name: Eyre Road</div>`)[0];
+                popup_d1a4658d8c37726830f8355f0cd095b0.setContent(html_5fec86234f62c6a1837ed47314df8eab);
+            
+        
+
+        circle_marker_d2066a5b7e26d6adaa03df4f2ef16403.bindPopup(popup_d1a4658d8c37726830f8355f0cd095b0)
+        ;
+
+        
+    
+    
+            var circle_marker_e1a8db2afb94c768f33f60dfbb092114 = L.circleMarker(
+                [49.86354323, -125.1149271],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_6a5b76c1cee265ccb284122e0e9c7e26 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1a9e97c3ad0107f44b05f495637577aa = $(`<div id="html_1a9e97c3ad0107f44b05f495637577aa" style="width: 100.0%; height: 100.0%;">Area Name: Saratoga Beach<br>Access Name: Seaman Road</div>`)[0];
+                popup_6a5b76c1cee265ccb284122e0e9c7e26.setContent(html_1a9e97c3ad0107f44b05f495637577aa);
+            
+        
+
+        circle_marker_e1a8db2afb94c768f33f60dfbb092114.bindPopup(popup_6a5b76c1cee265ccb284122e0e9c7e26)
+        ;
+
+        
+    
+    
+            var circle_marker_23f3107e985fd122808f8208c517c992 = L.circleMarker(
+                [49.86165028, -125.1137437],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_3c43d80f3aafae87842c46fb45e4f1ae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_008ea667d838a860d3d059c7a680eb3d = $(`<div id="html_008ea667d838a860d3d059c7a680eb3d" style="width: 100.0%; height: 100.0%;">Area Name: Saratoga Beach<br>Access Name: Driftwood Road #1</div>`)[0];
+                popup_3c43d80f3aafae87842c46fb45e4f1ae.setContent(html_008ea667d838a860d3d059c7a680eb3d);
+            
+        
+
+        circle_marker_23f3107e985fd122808f8208c517c992.bindPopup(popup_3c43d80f3aafae87842c46fb45e4f1ae)
+        ;
+
+        
+    
+    
+            var circle_marker_2a1805dffb89fd8c561d5f28eb886593 = L.circleMarker(
+                [49.85926001, -125.1105987],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_5ba46c1c8e9eb1cfef74bb8c2fb24b10 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ada788d0ba252eff7fd4e573bb0977c7 = $(`<div id="html_ada788d0ba252eff7fd4e573bb0977c7" style="width: 100.0%; height: 100.0%;">Area Name: Black Creek<br>Access Name: Cornell Road</div>`)[0];
+                popup_5ba46c1c8e9eb1cfef74bb8c2fb24b10.setContent(html_ada788d0ba252eff7fd4e573bb0977c7);
+            
+        
+
+        circle_marker_2a1805dffb89fd8c561d5f28eb886593.bindPopup(popup_5ba46c1c8e9eb1cfef74bb8c2fb24b10)
+        ;
+
+        
+    
+    
+            var circle_marker_5cbd4e77271c040996ba185dd895c7da = L.circleMarker(
+                [49.85819516, -125.1063937],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_fd748c0374cf1bfc5d70b1e621007caf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0df7f2d2f7bdd44ece203ded87624552 = $(`<div id="html_0df7f2d2f7bdd44ece203ded87624552" style="width: 100.0%; height: 100.0%;">Area Name: Black Creek<br>Access Name: Driftwood Road #2</div>`)[0];
+                popup_fd748c0374cf1bfc5d70b1e621007caf.setContent(html_0df7f2d2f7bdd44ece203ded87624552);
+            
+        
+
+        circle_marker_5cbd4e77271c040996ba185dd895c7da.bindPopup(popup_fd748c0374cf1bfc5d70b1e621007caf)
+        ;
+
+        
+    
+    
+            var circle_marker_9295805b16294b188c9aa762642d6930 = L.circleMarker(
+                [49.85586204, -125.1014864],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_bd2418f6c3aecf3ae9e0c3e3f744b752 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4dfc3dfca07b308d08ff74b8691624c5 = $(`<div id="html_4dfc3dfca07b308d08ff74b8691624c5" style="width: 100.0%; height: 100.0%;">Area Name: Black Creek<br>Access Name: Strait Road</div>`)[0];
+                popup_bd2418f6c3aecf3ae9e0c3e3f744b752.setContent(html_4dfc3dfca07b308d08ff74b8691624c5);
+            
+        
+
+        circle_marker_9295805b16294b188c9aa762642d6930.bindPopup(popup_bd2418f6c3aecf3ae9e0c3e3f744b752)
+        ;
+
+        
+    
+    
+            var circle_marker_9b746840ce962b843ce6a082aedcc459 = L.circleMarker(
+                [49.85340157, -125.1002297],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_bcde97464a11ebebe92f0a821836ee82 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ea7f2949e9b168c49599d2ac57a99fd8 = $(`<div id="html_ea7f2949e9b168c49599d2ac57a99fd8" style="width: 100.0%; height: 100.0%;">Area Name: Black Creek<br>Access Name: Beach Cres</div>`)[0];
+                popup_bcde97464a11ebebe92f0a821836ee82.setContent(html_ea7f2949e9b168c49599d2ac57a99fd8);
+            
+        
+
+        circle_marker_9b746840ce962b843ce6a082aedcc459.bindPopup(popup_bcde97464a11ebebe92f0a821836ee82)
+        ;
+
+        
+    
+    
+            var circle_marker_59fe4a04868fce65bf5fd801240c4776 = L.circleMarker(
+                [49.84831375, -125.0892411],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_b8a9f0635f239529b0171dcd1b58a980 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2546a39e851d0b6e480047c6e5ff1728 = $(`<div id="html_2546a39e851d0b6e480047c6e5ff1728" style="width: 100.0%; height: 100.0%;">Area Name: Miracle Beach Provincial Park<br>Access Name: Mountain View Road</div>`)[0];
+                popup_b8a9f0635f239529b0171dcd1b58a980.setContent(html_2546a39e851d0b6e480047c6e5ff1728);
+            
+        
+
+        circle_marker_59fe4a04868fce65bf5fd801240c4776.bindPopup(popup_b8a9f0635f239529b0171dcd1b58a980)
+        ;
+
+        
+    
+    
+            var circle_marker_9a401d8d76e40693fc561ac38c7df1a5 = L.circleMarker(
+                [49.84756203, -125.0866199],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_2c0ac1ae440c6535bee358c3fbd35797 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_80fc64739f57db15ba3ffc43b0266e70 = $(`<div id="html_80fc64739f57db15ba3ffc43b0266e70" style="width: 100.0%; height: 100.0%;">Area Name: Miracle Beach Provincial Park<br>Access Name: Mahaffey Road</div>`)[0];
+                popup_2c0ac1ae440c6535bee358c3fbd35797.setContent(html_80fc64739f57db15ba3ffc43b0266e70);
+            
+        
+
+        circle_marker_9a401d8d76e40693fc561ac38c7df1a5.bindPopup(popup_2c0ac1ae440c6535bee358c3fbd35797)
+        ;
+
+        
+    
+    
+            var circle_marker_3e010e3cf17d029805d456990c671bc7 = L.circleMarker(
+                [49.84723954, -125.0816344],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_3c6ec2ca37974716fe9f3740eb576ea4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d7586a6c978703162e9abf928c1b79f3 = $(`<div id="html_d7586a6c978703162e9abf928c1b79f3" style="width: 100.0%; height: 100.0%;">Area Name: Seaview Road/Seaview Farm<br>Access Name: Franklin Road</div>`)[0];
+                popup_3c6ec2ca37974716fe9f3740eb576ea4.setContent(html_d7586a6c978703162e9abf928c1b79f3);
+            
+        
+
+        circle_marker_3e010e3cf17d029805d456990c671bc7.bindPopup(popup_3c6ec2ca37974716fe9f3740eb576ea4)
+        ;
+
+        
+    
+    
+            var circle_marker_6fb508b7311818b5fe67628239eb9872 = L.circleMarker(
+                [49.84686688, -125.0788164],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_c91bce6baff500c54c75741e4b54bd11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_649554d89fd1f53dee59a191bcfb6b67 = $(`<div id="html_649554d89fd1f53dee59a191bcfb6b67" style="width: 100.0%; height: 100.0%;">Area Name: Seaview Road/Seaview Farm<br>Access Name: Woodbine Road</div>`)[0];
+                popup_c91bce6baff500c54c75741e4b54bd11.setContent(html_649554d89fd1f53dee59a191bcfb6b67);
+            
+        
+
+        circle_marker_6fb508b7311818b5fe67628239eb9872.bindPopup(popup_c91bce6baff500c54c75741e4b54bd11)
+        ;
+
+        
+    
+    
+            var circle_marker_5e8517a63f60c7768c9d878dc3837a07 = L.circleMarker(
+                [49.84647618, -125.0839704],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_7151aad54180a106e5de3b345bbc612c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a89ed34288c8b8acc56727f376337225 = $(`<div id="html_a89ed34288c8b8acc56727f376337225" style="width: 100.0%; height: 100.0%;">Area Name: Seaview Road/Seaview Farm<br>Access Name: Anchor Road</div>`)[0];
+                popup_7151aad54180a106e5de3b345bbc612c.setContent(html_a89ed34288c8b8acc56727f376337225);
+            
+        
+
+        circle_marker_5e8517a63f60c7768c9d878dc3837a07.bindPopup(popup_7151aad54180a106e5de3b345bbc612c)
+        ;
+
+        
+    
+    
+            var circle_marker_8a06fe27a548434dc006c3ba943bf4a1 = L.circleMarker(
+                [49.84595362, -125.0764385],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_7b2f20a89e406c9d4066b99ce9914570 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8a3045bc8d4ad77415d1b3ef35f1fc32 = $(`<div id="html_8a3045bc8d4ad77415d1b3ef35f1fc32" style="width: 100.0%; height: 100.0%;">Area Name: Seaview Road/Seaview Farm<br>Access Name: Bonair Road</div>`)[0];
+                popup_7b2f20a89e406c9d4066b99ce9914570.setContent(html_8a3045bc8d4ad77415d1b3ef35f1fc32);
+            
+        
+
+        circle_marker_8a06fe27a548434dc006c3ba943bf4a1.bindPopup(popup_7b2f20a89e406c9d4066b99ce9914570)
+        ;
+
+        
+    
+    
+            var circle_marker_64f500989d26990a352f2df3de20a472 = L.circleMarker(
+                [49.84512763, -125.0739652],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_49f0f2c96b831a5ffcb5f01e78edaabf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_88551d1b61bd5da740d2cdf177a8de98 = $(`<div id="html_88551d1b61bd5da740d2cdf177a8de98" style="width: 100.0%; height: 100.0%;">Area Name: Seaview Road/Seaview Farm<br>Access Name: Cosby Road</div>`)[0];
+                popup_49f0f2c96b831a5ffcb5f01e78edaabf.setContent(html_88551d1b61bd5da740d2cdf177a8de98);
+            
+        
+
+        circle_marker_64f500989d26990a352f2df3de20a472.bindPopup(popup_49f0f2c96b831a5ffcb5f01e78edaabf)
+        ;
+
+        
+    
+    
+            var circle_marker_72e1673452cca2adeae9893c7822ed50 = L.circleMarker(
+                [49.84430467, -125.0725456],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_640cf519f0787c09352ff8fb0abafa44 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e10175325bcecceeb682909fb8c035e5 = $(`<div id="html_e10175325bcecceeb682909fb8c035e5" style="width: 100.0%; height: 100.0%;">Area Name: Williams Beach<br>Access Name: Francis Road</div>`)[0];
+                popup_640cf519f0787c09352ff8fb0abafa44.setContent(html_e10175325bcecceeb682909fb8c035e5);
+            
+        
+
+        circle_marker_72e1673452cca2adeae9893c7822ed50.bindPopup(popup_640cf519f0787c09352ff8fb0abafa44)
+        ;
+
+        
+    
+    
+            var circle_marker_b034d307e361358b24d615b94d7c2f73 = L.circleMarker(
+                [49.84281309, -125.0701598],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_16e233b444687caee42c0b240ada6598 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_95bb2b1e015da47c5335844176a416aa = $(`<div id="html_95bb2b1e015da47c5335844176a416aa" style="width: 100.0%; height: 100.0%;">Area Name: Williams Beach<br>Access Name: Winlaw Road</div>`)[0];
+                popup_16e233b444687caee42c0b240ada6598.setContent(html_95bb2b1e015da47c5335844176a416aa);
+            
+        
+
+        circle_marker_b034d307e361358b24d615b94d7c2f73.bindPopup(popup_16e233b444687caee42c0b240ada6598)
+        ;
+
+        
+    
+    
+            var circle_marker_d2e3be4e4cf76c572acb5c62680171d6 = L.circleMarker(
+                [49.83566183, -125.05928],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_f60368e4fe9d31235c48417c221f74f0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d7841ca6e316521749bb93fe07346e1f = $(`<div id="html_d7841ca6e316521749bb93fe07346e1f" style="width: 100.0%; height: 100.0%;">Area Name: Williams Beach<br>Access Name: Williams Beach Road</div>`)[0];
+                popup_f60368e4fe9d31235c48417c221f74f0.setContent(html_d7841ca6e316521749bb93fe07346e1f);
+            
+        
+
+        circle_marker_d2e3be4e4cf76c572acb5c62680171d6.bindPopup(popup_f60368e4fe9d31235c48417c221f74f0)
+        ;
+
+        
+    
+    
+            var circle_marker_cadf7a93e27ec9b072798c3409f0944c = L.circleMarker(
+                [49.83234545, -125.0567864],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_7e659ca6797fd4504fc516cdd5883ae9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0cc59a1ab15bd8edd5026aaa5810c596 = $(`<div id="html_0cc59a1ab15bd8edd5026aaa5810c596" style="width: 100.0%; height: 100.0%;">Area Name: Williams Beach<br>Access Name: Yew Road</div>`)[0];
+                popup_7e659ca6797fd4504fc516cdd5883ae9.setContent(html_0cc59a1ab15bd8edd5026aaa5810c596);
+            
+        
+
+        circle_marker_cadf7a93e27ec9b072798c3409f0944c.bindPopup(popup_7e659ca6797fd4504fc516cdd5883ae9)
+        ;
+
+        
+    
+    
+            var circle_marker_41ef6bdc29bb5358214580ae6a553e95 = L.circleMarker(
+                [49.82600769, -125.048258],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_44fc7d827481c2df6114eb78843bd491 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bfe9aadee2dff6d2b245c04915a56d5f = $(`<div id="html_bfe9aadee2dff6d2b245c04915a56d5f" style="width: 100.0%; height: 100.0%;">Area Name: Williams Beach<br>Access Name: Memory Lane</div>`)[0];
+                popup_44fc7d827481c2df6114eb78843bd491.setContent(html_bfe9aadee2dff6d2b245c04915a56d5f);
+            
+        
+
+        circle_marker_41ef6bdc29bb5358214580ae6a553e95.bindPopup(popup_44fc7d827481c2df6114eb78843bd491)
+        ;
+
+        
+    
+    
+            var circle_marker_b1a9f732c484bb20e5b0ed4f10c758e3 = L.circleMarker(
+                [49.82190428, -125.0414806],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_d3dc068293757c2aaed76be52cd6c5ec = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_521f9d7fe0473aace1e63104b9353c36 = $(`<div id="html_521f9d7fe0473aace1e63104b9353c36" style="width: 100.0%; height: 100.0%;">Area Name: Merville<br>Access Name: Serenity Drive</div>`)[0];
+                popup_d3dc068293757c2aaed76be52cd6c5ec.setContent(html_521f9d7fe0473aace1e63104b9353c36);
+            
+        
+
+        circle_marker_b1a9f732c484bb20e5b0ed4f10c758e3.bindPopup(popup_d3dc068293757c2aaed76be52cd6c5ec)
+        ;
+
+        
+    
+    
+            var circle_marker_4cf7cbca5ff8b38423940f9099691b31 = L.circleMarker(
+                [49.82087294, -125.0368505],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_54e774018d9bc653d8c36eb7bea8476a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d71e5d8ffe14ec225a1a501b2b3bbc09 = $(`<div id="html_d71e5d8ffe14ec225a1a501b2b3bbc09" style="width: 100.0%; height: 100.0%;">Area Name: Merville<br>Access Name: Lenwood Road</div>`)[0];
+                popup_54e774018d9bc653d8c36eb7bea8476a.setContent(html_d71e5d8ffe14ec225a1a501b2b3bbc09);
+            
+        
+
+        circle_marker_4cf7cbca5ff8b38423940f9099691b31.bindPopup(popup_54e774018d9bc653d8c36eb7bea8476a)
+        ;
+
+        
+    
+    
+            var circle_marker_bb1453c3206664425c18ed882a900dea = L.circleMarker(
+                [49.81985701, -125.0335002],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_28a305adf7fad9c95abadf82e824d19d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ccb548556b53d2f1c231a4afd338398c = $(`<div id="html_ccb548556b53d2f1c231a4afd338398c" style="width: 100.0%; height: 100.0%;">Area Name: Merville<br>Access Name: Spray Road</div>`)[0];
+                popup_28a305adf7fad9c95abadf82e824d19d.setContent(html_ccb548556b53d2f1c231a4afd338398c);
+            
+        
+
+        circle_marker_bb1453c3206664425c18ed882a900dea.bindPopup(popup_28a305adf7fad9c95abadf82e824d19d)
+        ;
+
+        
+    
+    
+            var circle_marker_3f609c2dafbb10408ff96d6823dd8756 = L.circleMarker(
+                [49.81692033, -125.0301137],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_934a381bda8ec350a8d298aff8e832c9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_aaaa2f4eea0ee7bd395b2779e3fef6c9 = $(`<div id="html_aaaa2f4eea0ee7bd395b2779e3fef6c9" style="width: 100.0%; height: 100.0%;">Area Name: Merville<br>Access Name: Siokum Road</div>`)[0];
+                popup_934a381bda8ec350a8d298aff8e832c9.setContent(html_aaaa2f4eea0ee7bd395b2779e3fef6c9);
+            
+        
+
+        circle_marker_3f609c2dafbb10408ff96d6823dd8756.bindPopup(popup_934a381bda8ec350a8d298aff8e832c9)
+        ;
+
+        
+    
+    
+            var circle_marker_f70409437a76764f5485166d80117905 = L.circleMarker(
+                [49.8136741, -125.0268372],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_1768314b07e806a76352ea490f1ee03c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_044ae78e3ad5acc8cfbf6c1dc530fda6 = $(`<div id="html_044ae78e3ad5acc8cfbf6c1dc530fda6" style="width: 100.0%; height: 100.0%;">Area Name: Merville/Kitty Coleman<br>Access Name: Tasman Road</div>`)[0];
+                popup_1768314b07e806a76352ea490f1ee03c.setContent(html_044ae78e3ad5acc8cfbf6c1dc530fda6);
+            
+        
+
+        circle_marker_f70409437a76764f5485166d80117905.bindPopup(popup_1768314b07e806a76352ea490f1ee03c)
+        ;
+
+        
+    
+    
+            var circle_marker_5344f1133aa4a7fa86499c813fd5688b = L.circleMarker(
+                [49.8074137, -125.0200503],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_2c1bb68640a1ec38b05c1c99017de3b5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_19b8073dc3784a7005c987961526af50 = $(`<div id="html_19b8073dc3784a7005c987961526af50" style="width: 100.0%; height: 100.0%;">Area Name: Merville/Kitty Coleman<br>Access Name: Maris Road</div>`)[0];
+                popup_2c1bb68640a1ec38b05c1c99017de3b5.setContent(html_19b8073dc3784a7005c987961526af50);
+            
+        
+
+        circle_marker_5344f1133aa4a7fa86499c813fd5688b.bindPopup(popup_2c1bb68640a1ec38b05c1c99017de3b5)
+        ;
+
+        
+    
+    
+            var circle_marker_34e34f8242d9121a6f95b6162a879129 = L.circleMarker(
+                [49.79991913, -125.0127438],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_d6f133c89bf7433f9d114332692b02d2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dbf5fa13a06c4a55004c56a815a79b77 = $(`<div id="html_dbf5fa13a06c4a55004c56a815a79b77" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman<br>Access Name: Lamb Road</div>`)[0];
+                popup_d6f133c89bf7433f9d114332692b02d2.setContent(html_dbf5fa13a06c4a55004c56a815a79b77);
+            
+        
+
+        circle_marker_34e34f8242d9121a6f95b6162a879129.bindPopup(popup_d6f133c89bf7433f9d114332692b02d2)
+        ;
+
+        
+    
+    
+            var circle_marker_5b269105ead2528cc0664adf06914a28 = L.circleMarker(
+                [49.79561547, -125.0093524],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_ded22cda73a225fe26a7fe7d36bd89f3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e241f4e4df1c4fe13ff23f9ad8c63461 = $(`<div id="html_e241f4e4df1c4fe13ff23f9ad8c63461" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman<br>Access Name: Coho Drive</div>`)[0];
+                popup_ded22cda73a225fe26a7fe7d36bd89f3.setContent(html_e241f4e4df1c4fe13ff23f9ad8c63461);
+            
+        
+
+        circle_marker_5b269105ead2528cc0664adf06914a28.bindPopup(popup_ded22cda73a225fe26a7fe7d36bd89f3)
+        ;
+
+        
+    
+    
+            var circle_marker_ae405b382ae53be3a37c0b58b4af1da6 = L.circleMarker(
+                [49.79434322, -125.0081243],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_98622b37007ef715335af904244a8c8a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_add204b66a0a316baee40a5d77566665 = $(`<div id="html_add204b66a0a316baee40a5d77566665" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman<br>Access Name: Pantuso Road</div>`)[0];
+                popup_98622b37007ef715335af904244a8c8a.setContent(html_add204b66a0a316baee40a5d77566665);
+            
+        
+
+        circle_marker_ae405b382ae53be3a37c0b58b4af1da6.bindPopup(popup_98622b37007ef715335af904244a8c8a)
+        ;
+
+        
+    
+    
+            var circle_marker_0f29803d12ea1883a991539419d598c9 = L.circleMarker(
+                [49.79373287, -125.0060225],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_3a567ed83f76316dbbefd64506697fc7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_65a680e6656030347297d9f818e6ccce = $(`<div id="html_65a680e6656030347297d9f818e6ccce" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman<br>Access Name: Left Road</div>`)[0];
+                popup_3a567ed83f76316dbbefd64506697fc7.setContent(html_65a680e6656030347297d9f818e6ccce);
+            
+        
+
+        circle_marker_0f29803d12ea1883a991539419d598c9.bindPopup(popup_3a567ed83f76316dbbefd64506697fc7)
+        ;
+
+        
+    
+    
+            var circle_marker_eb9ab8af17ba7dcd4804c05791bdb5bc = L.circleMarker(
+                [49.79194786, -125.0014432],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_8dd961d327fe0102889cc5687f2ddd8b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_58cd3057a87d3be409fb7f3de04922bc = $(`<div id="html_58cd3057a87d3be409fb7f3de04922bc" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman<br>Access Name: Wilson Road</div>`)[0];
+                popup_8dd961d327fe0102889cc5687f2ddd8b.setContent(html_58cd3057a87d3be409fb7f3de04922bc);
+            
+        
+
+        circle_marker_eb9ab8af17ba7dcd4804c05791bdb5bc.bindPopup(popup_8dd961d327fe0102889cc5687f2ddd8b)
+        ;
+
+        
+    
+    
+            var marker_f193bcfb4f4fb563001ca945c046eb3d = L.marker(
+                [49.78967922, -124.9962175],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_d69866b169c943e8446b7f5edfc367f2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_f193bcfb4f4fb563001ca945c046eb3d.setIcon(div_icon_d69866b169c943e8446b7f5edfc367f2);
+        
+    
+        var popup_503095b41d7d1ad916f27b12170e6230 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_57b79b7450087e8bc87a7925d8f20b0a = $(`<div id="html_57b79b7450087e8bc87a7925d8f20b0a" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman/Bates Beach<br>Access Name: Whitaker Road<br>Boat Launch: Paved</div>`)[0];
+                popup_503095b41d7d1ad916f27b12170e6230.setContent(html_57b79b7450087e8bc87a7925d8f20b0a);
+            
+        
+
+        marker_f193bcfb4f4fb563001ca945c046eb3d.bindPopup(popup_503095b41d7d1ad916f27b12170e6230)
+        ;
+
+        
+    
+    
+            var circle_marker_274bfce383139526236ac59fca1270fe = L.circleMarker(
+                [49.78655205, -124.9922302],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_3a0202267bc5665adf519663c4e0deb9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0160ed654e034378dc766b14398f323b = $(`<div id="html_0160ed654e034378dc766b14398f323b" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman/Bates Beach<br>Access Name: Davey Janes Road</div>`)[0];
+                popup_3a0202267bc5665adf519663c4e0deb9.setContent(html_0160ed654e034378dc766b14398f323b);
+            
+        
+
+        circle_marker_274bfce383139526236ac59fca1270fe.bindPopup(popup_3a0202267bc5665adf519663c4e0deb9)
+        ;
+
+        
+    
+    
+            var circle_marker_0f19bc4fa2315ed3daa09e346aab056f = L.circleMarker(
+                [49.78521905, -124.9903295],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_add598c65ab7b397d64e783b533957ac = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_48992c10e55a59ad31b5f7303c31d44c = $(`<div id="html_48992c10e55a59ad31b5f7303c31d44c" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman/Bates Beach<br>Access Name: Destiny Road</div>`)[0];
+                popup_add598c65ab7b397d64e783b533957ac.setContent(html_48992c10e55a59ad31b5f7303c31d44c);
+            
+        
+
+        circle_marker_0f19bc4fa2315ed3daa09e346aab056f.bindPopup(popup_add598c65ab7b397d64e783b533957ac)
+        ;
+
+        
+    
+    
+            var circle_marker_98eeec8bad35a35ca619c87c57dd88f8 = L.circleMarker(
+                [49.78384329, -124.9886095],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_f1712dcd730ae15dac5dc8de5a88f262 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c95bcef8b70e9695b68f5eea7d5072c6 = $(`<div id="html_c95bcef8b70e9695b68f5eea7d5072c6" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman/Bates Beach<br>Access Name: Dinghy Road</div>`)[0];
+                popup_f1712dcd730ae15dac5dc8de5a88f262.setContent(html_c95bcef8b70e9695b68f5eea7d5072c6);
+            
+        
+
+        circle_marker_98eeec8bad35a35ca619c87c57dd88f8.bindPopup(popup_f1712dcd730ae15dac5dc8de5a88f262)
+        ;
+
+        
+    
+    
+            var circle_marker_026d7bcda4d8020cb56bad2ab9dbd76c = L.circleMarker(
+                [49.78234868, -124.9870243],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_4951db277b5ac651a4940dcd2783f730 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5ef39da9b5c172a231cda84d55374927 = $(`<div id="html_5ef39da9b5c172a231cda84d55374927" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman/Bates Beach<br>Access Name: Eel Road</div>`)[0];
+                popup_4951db277b5ac651a4940dcd2783f730.setContent(html_5ef39da9b5c172a231cda84d55374927);
+            
+        
+
+        circle_marker_026d7bcda4d8020cb56bad2ab9dbd76c.bindPopup(popup_4951db277b5ac651a4940dcd2783f730)
+        ;
+
+        
+    
+    
+            var circle_marker_3aab86d20e744eccfd93fd1b9b83a0aa = L.circleMarker(
+                [49.78104597, -124.9853406],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_a26a204de118338a7fa21ce1571ff5e9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c2780489717728bc27846be59aaaa155 = $(`<div id="html_c2780489717728bc27846be59aaaa155" style="width: 100.0%; height: 100.0%;">Area Name: Kitty Coleman/Bates Beach<br>Access Name: Seabird Road</div>`)[0];
+                popup_a26a204de118338a7fa21ce1571ff5e9.setContent(html_c2780489717728bc27846be59aaaa155);
+            
+        
+
+        circle_marker_3aab86d20e744eccfd93fd1b9b83a0aa.bindPopup(popup_a26a204de118338a7fa21ce1571ff5e9)
+        ;
+
+        
+    
+    
+            var circle_marker_601ddbe0653b80d2eb5d87918db8e981 = L.circleMarker(
+                [49.77967513, -124.9843004],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_baba9dcc4a590550fa8fcd7beda41a22 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_00a2ef4998efb07c1772b4015511f9e6 = $(`<div id="html_00a2ef4998efb07c1772b4015511f9e6" style="width: 100.0%; height: 100.0%;">Area Name: Bates Beach<br>Access Name: Coleman Road</div>`)[0];
+                popup_baba9dcc4a590550fa8fcd7beda41a22.setContent(html_00a2ef4998efb07c1772b4015511f9e6);
+            
+        
+
+        circle_marker_601ddbe0653b80d2eb5d87918db8e981.bindPopup(popup_baba9dcc4a590550fa8fcd7beda41a22)
+        ;
+
+        
+    
+    
+            var circle_marker_7fc9e107dcd816a1805c4befb95d6026 = L.circleMarker(
+                [49.7768547, -124.9796173],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_5363a1cdb1d29f56c130a0d19038ad60 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9f9e3e266848125095670aab73816121 = $(`<div id="html_9f9e3e266848125095670aab73816121" style="width: 100.0%; height: 100.0%;">Area Name: Bates Beach<br>Access Name: Bartlet Road</div>`)[0];
+                popup_5363a1cdb1d29f56c130a0d19038ad60.setContent(html_9f9e3e266848125095670aab73816121);
+            
+        
+
+        circle_marker_7fc9e107dcd816a1805c4befb95d6026.bindPopup(popup_5363a1cdb1d29f56c130a0d19038ad60)
+        ;
+
+        
+    
+    
+            var circle_marker_2af0fad3771d2c6abdb85a939deced8c = L.circleMarker(
+                [49.7760246, -124.9767422],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_817ec50cd0ce11233aee2c8ce7058bff = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0af6e9eb4c23fb9407ac0b9f9e1615b0 = $(`<div id="html_0af6e9eb4c23fb9407ac0b9f9e1615b0" style="width: 100.0%; height: 100.0%;">Area Name: Bates Beach<br>Access Name: Pebble Road</div>`)[0];
+                popup_817ec50cd0ce11233aee2c8ce7058bff.setContent(html_0af6e9eb4c23fb9407ac0b9f9e1615b0);
+            
+        
+
+        circle_marker_2af0fad3771d2c6abdb85a939deced8c.bindPopup(popup_817ec50cd0ce11233aee2c8ce7058bff)
+        ;
+
+        
+    
+    
+            var marker_26587d2e5961f63daff5e93a666f6bb5 = L.marker(
+                [49.77517502, -124.9750253],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_2e12e5a26d97ffe8b6ab8a309e24fa8d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_26587d2e5961f63daff5e93a666f6bb5.setIcon(div_icon_2e12e5a26d97ffe8b6ab8a309e24fa8d);
+        
+    
+        var popup_b3af545207ed9dcdf1016292e974b25f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b77f98d57cbe40f06c8e60916aee0f79 = $(`<div id="html_b77f98d57cbe40f06c8e60916aee0f79" style="width: 100.0%; height: 100.0%;">Area Name: Bates Beach<br>Access Name: Bates Beach<br>Boat Launch: Paved</div>`)[0];
+                popup_b3af545207ed9dcdf1016292e974b25f.setContent(html_b77f98d57cbe40f06c8e60916aee0f79);
+            
+        
+
+        marker_26587d2e5961f63daff5e93a666f6bb5.bindPopup(popup_b3af545207ed9dcdf1016292e974b25f)
+        ;
+
+        
+    
+    
+            var circle_marker_73e8d7af836fd58079d6cf066ca8fd3d = L.circleMarker(
+                [49.77432543, -124.9734193],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_0d93a8bab49b96b166ff3fe6c95c5155 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_89b26a713b0ff16dbe6cc18e1e85c9d0 = $(`<div id="html_89b26a713b0ff16dbe6cc18e1e85c9d0" style="width: 100.0%; height: 100.0%;">Area Name: Bates Beach<br>Access Name: Seacliff Road</div>`)[0];
+                popup_0d93a8bab49b96b166ff3fe6c95c5155.setContent(html_89b26a713b0ff16dbe6cc18e1e85c9d0);
+            
+        
+
+        circle_marker_73e8d7af836fd58079d6cf066ca8fd3d.bindPopup(popup_0d93a8bab49b96b166ff3fe6c95c5155)
+        ;
+
+        
+    
+    
+            var circle_marker_c1d24de795cebb75c1aad45698feadab = L.circleMarker(
+                [49.76715653, -124.9704703],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_eb60caf6f2cc70812f95e6b346a43182 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e92bd6425597d8c8a59ffc40706dbe0c = $(`<div id="html_e92bd6425597d8c8a59ffc40706dbe0c" style="width: 100.0%; height: 100.0%;">Area Name: Seal Bay<br>Access Name: Loxley Road</div>`)[0];
+                popup_eb60caf6f2cc70812f95e6b346a43182.setContent(html_e92bd6425597d8c8a59ffc40706dbe0c);
+            
+        
+
+        circle_marker_c1d24de795cebb75c1aad45698feadab.bindPopup(popup_eb60caf6f2cc70812f95e6b346a43182)
+        ;
+
+        
+    
+    
+            var circle_marker_82ccc7b0e2d4eeb5efd5e460c6223da1 = L.circleMarker(
+                [49.76009335, -124.9595979],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_b4d6059057330f60e1468d85aa9c5807 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d4ba3c5a9c749fe051e168bee422320a = $(`<div id="html_d4ba3c5a9c749fe051e168bee422320a" style="width: 100.0%; height: 100.0%;">Area Name: Seal Bay<br>Access Name: March Road</div>`)[0];
+                popup_b4d6059057330f60e1468d85aa9c5807.setContent(html_d4ba3c5a9c749fe051e168bee422320a);
+            
+        
+
+        circle_marker_82ccc7b0e2d4eeb5efd5e460c6223da1.bindPopup(popup_b4d6059057330f60e1468d85aa9c5807)
+        ;
+
+        
+    
+    
+            var circle_marker_582fec232c7f50de4b42d9f6965b0440 = L.circleMarker(
+                [49.75987646, -124.954421],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_48bdf47b508fa69dd7eb1d0f41041c28 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cece73caa6f7442e91cb9c34b87e1552 = $(`<div id="html_cece73caa6f7442e91cb9c34b87e1552" style="width: 100.0%; height: 100.0%;">Area Name: Seal Bay<br>Access Name: Waveland Road</div>`)[0];
+                popup_48bdf47b508fa69dd7eb1d0f41041c28.setContent(html_cece73caa6f7442e91cb9c34b87e1552);
+            
+        
+
+        circle_marker_582fec232c7f50de4b42d9f6965b0440.bindPopup(popup_48bdf47b508fa69dd7eb1d0f41041c28)
+        ;
+
+        
+    
+    
+            var circle_marker_443e5e707ecbd2b7c8b66ae0203295c4 = L.circleMarker(
+                [49.75855306, -124.94942],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_0d9c8490086b66e4921ea261eaa502ed = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dc4cc8e86edf7c9d38245017d165c1ec = $(`<div id="html_dc4cc8e86edf7c9d38245017d165c1ec" style="width: 100.0%; height: 100.0%;">Area Name: Seal Bay<br>Access Name: Neptune Road</div>`)[0];
+                popup_0d9c8490086b66e4921ea261eaa502ed.setContent(html_dc4cc8e86edf7c9d38245017d165c1ec);
+            
+        
+
+        circle_marker_443e5e707ecbd2b7c8b66ae0203295c4.bindPopup(popup_0d9c8490086b66e4921ea261eaa502ed)
+        ;
+
+        
+    
+    
+            var circle_marker_29ef92bac14e748fc436447fcf7be6d9 = L.circleMarker(
+                [49.75604794, -124.946809],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_b274e17068927491759ae467ec398689 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_008e396f5676a2daeee7f78610410674 = $(`<div id="html_008e396f5676a2daeee7f78610410674" style="width: 100.0%; height: 100.0%;">Area Name: Seal Bay<br>Access Name: Cloudcroft Road</div>`)[0];
+                popup_b274e17068927491759ae467ec398689.setContent(html_008e396f5676a2daeee7f78610410674);
+            
+        
+
+        circle_marker_29ef92bac14e748fc436447fcf7be6d9.bindPopup(popup_b274e17068927491759ae467ec398689)
+        ;
+
+        
+    
+    
+            var circle_marker_4abd2654958c16a11ff420ef511b6642 = L.circleMarker(
+                [49.75184919, -124.9425305],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_f87bcbb613664881c00d4727b6fa9a60 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ba6442aa235bdaad18086ddc5142beeb = $(`<div id="html_ba6442aa235bdaad18086ddc5142beeb" style="width: 100.0%; height: 100.0%;">Area Name: Seal Bay<br>Access Name: Broadwater Road</div>`)[0];
+                popup_f87bcbb613664881c00d4727b6fa9a60.setContent(html_ba6442aa235bdaad18086ddc5142beeb);
+            
+        
+
+        circle_marker_4abd2654958c16a11ff420ef511b6642.bindPopup(popup_f87bcbb613664881c00d4727b6fa9a60)
+        ;
+
+        
+    
+    
+            var circle_marker_844152b0ab9d88700b2fb171c2c34872 = L.circleMarker(
+                [49.75015723, -124.9413326],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_fcaab16f88f41e1471953cbf830c9887 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0380e8234724d8554c39b6999c2e4a4f = $(`<div id="html_0380e8234724d8554c39b6999c2e4a4f" style="width: 100.0%; height: 100.0%;">Area Name: Seal Bay/Little River<br>Access Name: Hall Road</div>`)[0];
+                popup_fcaab16f88f41e1471953cbf830c9887.setContent(html_0380e8234724d8554c39b6999c2e4a4f);
+            
+        
+
+        circle_marker_844152b0ab9d88700b2fb171c2c34872.bindPopup(popup_fcaab16f88f41e1471953cbf830c9887)
+        ;
+
+        
+    
+    
+            var circle_marker_4db4e56410aa93a35fac8523594d67b3 = L.circleMarker(
+                [49.74852067, -124.9408559],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_af5c14748a6147fc2300d5c58b97e0a7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1e9f959c7aee2c918781546f2e42cd31 = $(`<div id="html_1e9f959c7aee2c918781546f2e42cd31" style="width: 100.0%; height: 100.0%;">Area Name: Seal Bay/Little River<br>Access Name: Hall Road</div>`)[0];
+                popup_af5c14748a6147fc2300d5c58b97e0a7.setContent(html_1e9f959c7aee2c918781546f2e42cd31);
+            
+        
+
+        circle_marker_4db4e56410aa93a35fac8523594d67b3.bindPopup(popup_af5c14748a6147fc2300d5c58b97e0a7)
+        ;
+
+        
+    
+    
+            var circle_marker_2aa9aa16ec51566c165dea30b7aefa4d = L.circleMarker(
+                [49.74267532, -124.9320222],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_cdfbc3d72a067a12994a92f9740518de = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6dd61d0e527dee0199140f5d90499914 = $(`<div id="html_6dd61d0e527dee0199140f5d90499914" style="width: 100.0%; height: 100.0%;">Area Name: Seal Bay/Little River<br>Access Name: Wilkinson Road</div>`)[0];
+                popup_cdfbc3d72a067a12994a92f9740518de.setContent(html_6dd61d0e527dee0199140f5d90499914);
+            
+        
+
+        circle_marker_2aa9aa16ec51566c165dea30b7aefa4d.bindPopup(popup_cdfbc3d72a067a12994a92f9740518de)
+        ;
+
+        
+    
+    
+            var circle_marker_f36e65ddeb3e43a5783cf3a2a220fa43 = L.circleMarker(
+                [49.74089388, -124.929339],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_77273cfb196392e7d7f2d5c078ea4684 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_29223d98145e0e429bb47ae7185290e0 = $(`<div id="html_29223d98145e0e429bb47ae7185290e0" style="width: 100.0%; height: 100.0%;">Area Name: Seal Bay/Little River<br>Access Name: Lancaster Road</div>`)[0];
+                popup_77273cfb196392e7d7f2d5c078ea4684.setContent(html_29223d98145e0e429bb47ae7185290e0);
+            
+        
+
+        circle_marker_f36e65ddeb3e43a5783cf3a2a220fa43.bindPopup(popup_77273cfb196392e7d7f2d5c078ea4684)
+        ;
+
+        
+    
+    
+            var circle_marker_090076ecd513d48b5670869af7bde368 = L.circleMarker(
+                [49.73964928, -124.9131945],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_0f6aa02512900e3dd5e0454e3b61c439 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3ebbe48f7e49d1a5a00fda226c4e11cc = $(`<div id="html_3ebbe48f7e49d1a5a00fda226c4e11cc" style="width: 100.0%; height: 100.0%;">Area Name: Little River<br>Access Name: Singing Sands Road</div>`)[0];
+                popup_0f6aa02512900e3dd5e0454e3b61c439.setContent(html_3ebbe48f7e49d1a5a00fda226c4e11cc);
+            
+        
+
+        circle_marker_090076ecd513d48b5670869af7bde368.bindPopup(popup_0f6aa02512900e3dd5e0454e3b61c439)
+        ;
+
+        
+    
+    
+            var circle_marker_180c4e35caf36c1e87926b002826302e = L.circleMarker(
+                [49.7379114, -124.9122318],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_edce5aab5a74212b8c08552fd9af3d5d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b4d7a256fa9543f3b7f41b8b0dbcb86d = $(`<div id="html_b4d7a256fa9543f3b7f41b8b0dbcb86d" style="width: 100.0%; height: 100.0%;">Area Name: Little River<br>Access Name: Mayfair Road</div>`)[0];
+                popup_edce5aab5a74212b8c08552fd9af3d5d.setContent(html_b4d7a256fa9543f3b7f41b8b0dbcb86d);
+            
+        
+
+        circle_marker_180c4e35caf36c1e87926b002826302e.bindPopup(popup_edce5aab5a74212b8c08552fd9af3d5d)
+        ;
+
+        
+    
+    
+            var circle_marker_796b0dba78ca60af9bdb35ebaf3f045b = L.circleMarker(
+                [49.73625961, -124.9098775],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_5bbdbb6dda4e59af62508786f0b7d774 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_719a354f2ae218ee71a029e611ad0b9a = $(`<div id="html_719a354f2ae218ee71a029e611ad0b9a" style="width: 100.0%; height: 100.0%;">Area Name: Little River<br>Access Name: Little River Road</div>`)[0];
+                popup_5bbdbb6dda4e59af62508786f0b7d774.setContent(html_719a354f2ae218ee71a029e611ad0b9a);
+            
+        
+
+        circle_marker_796b0dba78ca60af9bdb35ebaf3f045b.bindPopup(popup_5bbdbb6dda4e59af62508786f0b7d774)
+        ;
+
+        
+    
+    
+            var circle_marker_0eab1976d3dd340a07222663f94c850c = L.circleMarker(
+                [49.73557095, -124.9079464],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_018f9ee265026d56b0070029c971124f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_da16f4a0f8f63cf7799fb5a641ce764c = $(`<div id="html_da16f4a0f8f63cf7799fb5a641ce764c" style="width: 100.0%; height: 100.0%;">Area Name: Little River<br>Access Name: Denny Road / Catrall Way</div>`)[0];
+                popup_018f9ee265026d56b0070029c971124f.setContent(html_da16f4a0f8f63cf7799fb5a641ce764c);
+            
+        
+
+        circle_marker_0eab1976d3dd340a07222663f94c850c.bindPopup(popup_018f9ee265026d56b0070029c971124f)
+        ;
+
+        
+    
+    
+            var circle_marker_ef6fa819c1ad920a2824e6349fc9f545 = L.circleMarker(
+                [49.73539591, -124.9060135],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_a609c1ef048a813a712a1c67ecca662d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_007d35dda486d9a7c4a16014b4b64796 = $(`<div id="html_007d35dda486d9a7c4a16014b4b64796" style="width: 100.0%; height: 100.0%;">Area Name: Little River<br>Access Name: Harvard Road</div>`)[0];
+                popup_a609c1ef048a813a712a1c67ecca662d.setContent(html_007d35dda486d9a7c4a16014b4b64796);
+            
+        
+
+        circle_marker_ef6fa819c1ad920a2824e6349fc9f545.bindPopup(popup_a609c1ef048a813a712a1c67ecca662d)
+        ;
+
+        
+    
+    
+            var circle_marker_f2c5155a6d4d275492fef38676509cc7 = L.circleMarker(
+                [49.73389341, -124.9041166],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_57181d5fda5297678235bc9fb0081ab5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dc1252ad76b8a61efba59ef80ca70b91 = $(`<div id="html_dc1252ad76b8a61efba59ef80ca70b91" style="width: 100.0%; height: 100.0%;">Area Name: Little River<br>Access Name: Booth Road</div>`)[0];
+                popup_57181d5fda5297678235bc9fb0081ab5.setContent(html_dc1252ad76b8a61efba59ef80ca70b91);
+            
+        
+
+        circle_marker_f2c5155a6d4d275492fef38676509cc7.bindPopup(popup_57181d5fda5297678235bc9fb0081ab5)
+        ;
+
+        
+    
+    
+            var circle_marker_0c040bfd22f976dcb676b91c832f67bb = L.circleMarker(
+                [49.73303924, -124.9031367],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_687f0212dc9356b2f9ee3eb9ad329ffa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c970509495e4a8c04c56531d5dce4794 = $(`<div id="html_c970509495e4a8c04c56531d5dce4794" style="width: 100.0%; height: 100.0%;">Area Name: Little River<br>Access Name: Toogood Road</div>`)[0];
+                popup_687f0212dc9356b2f9ee3eb9ad329ffa.setContent(html_c970509495e4a8c04c56531d5dce4794);
+            
+        
+
+        circle_marker_0c040bfd22f976dcb676b91c832f67bb.bindPopup(popup_687f0212dc9356b2f9ee3eb9ad329ffa)
+        ;
+
+        
+    
+    
+            var circle_marker_88dd8dfacfc27a7191e84d09a6deeff1 = L.circleMarker(
+                [49.73146864, -124.9019087],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_075dcf7342360202c74fa1ed89cc2b97 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1694f22b0c99ae24a93c16cf9acc0b23 = $(`<div id="html_1694f22b0c99ae24a93c16cf9acc0b23" style="width: 100.0%; height: 100.0%;">Area Name: Little River<br>Access Name: Pacific Road</div>`)[0];
+                popup_075dcf7342360202c74fa1ed89cc2b97.setContent(html_1694f22b0c99ae24a93c16cf9acc0b23);
+            
+        
+
+        circle_marker_88dd8dfacfc27a7191e84d09a6deeff1.bindPopup(popup_075dcf7342360202c74fa1ed89cc2b97)
+        ;
+
+        
+    
+    
+            var circle_marker_3c88414c1fac0a997b393cfe34eac5bf = L.circleMarker(
+                [49.73082768, -124.8996716],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_435e74f4939ae729a17ba2d409add3d5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2a342afa70486ffb93d0089ee4349aab = $(`<div id="html_2a342afa70486ffb93d0089ee4349aab" style="width: 100.0%; height: 100.0%;">Area Name: Little River<br>Access Name: Seal Road</div>`)[0];
+                popup_435e74f4939ae729a17ba2d409add3d5.setContent(html_2a342afa70486ffb93d0089ee4349aab);
+            
+        
+
+        circle_marker_3c88414c1fac0a997b393cfe34eac5bf.bindPopup(popup_435e74f4939ae729a17ba2d409add3d5)
+        ;
+
+        
+    
+    
+            var circle_marker_411499de1c7e761165e8058df4c2c4cf = L.circleMarker(
+                [49.7269047, -124.8913644],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_d7240a67cf5f5856cbb84a3e1eedb64e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_543e2da4f5c109306502f057f9a1cec7 = $(`<div id="html_543e2da4f5c109306502f057f9a1cec7" style="width: 100.0%; height: 100.0%;">Area Name: Little River<br>Access Name: Kilmorley Road</div>`)[0];
+                popup_d7240a67cf5f5856cbb84a3e1eedb64e.setContent(html_543e2da4f5c109306502f057f9a1cec7);
+            
+        
+
+        circle_marker_411499de1c7e761165e8058df4c2c4cf.bindPopup(popup_d7240a67cf5f5856cbb84a3e1eedb64e)
+        ;
+
+        
+    
+    
+            var circle_marker_389f1a49a94ce55d2d4995db43d71f1e = L.circleMarker(
+                [49.72203964, -124.8857543],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_740e5955a5a73f63862d9f9fbda442bb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7a457127e2be99e7fd933ea54887b2fa = $(`<div id="html_7a457127e2be99e7fd933ea54887b2fa" style="width: 100.0%; height: 100.0%;">Area Name: Air Force Beach/Kye Bay<br>Access Name: Air Force Beach</div>`)[0];
+                popup_740e5955a5a73f63862d9f9fbda442bb.setContent(html_7a457127e2be99e7fd933ea54887b2fa);
+            
+        
+
+        circle_marker_389f1a49a94ce55d2d4995db43d71f1e.bindPopup(popup_740e5955a5a73f63862d9f9fbda442bb)
+        ;
+
+        
+    
+    
+            var circle_marker_325b6372562a4d29838f488e39c98684 = L.circleMarker(
+                [49.70671122, -124.8703443],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_34caaec0cd9b67b072c6a9d68d2cff37 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7a7acae9c0bba4b1b6877feeac11238a = $(`<div id="html_7a7acae9c0bba4b1b6877feeac11238a" style="width: 100.0%; height: 100.0%;">Area Name: Kye Bay/Point Holmes<br>Access Name: Kye Bay</div>`)[0];
+                popup_34caaec0cd9b67b072c6a9d68d2cff37.setContent(html_7a7acae9c0bba4b1b6877feeac11238a);
+            
+        
+
+        circle_marker_325b6372562a4d29838f488e39c98684.bindPopup(popup_34caaec0cd9b67b072c6a9d68d2cff37)
+        ;
+
+        
+    
+    
+            var circle_marker_8494f0d49a4a1b5a3d2f0e010ddb9915 = L.circleMarker(
+                [49.70636963, -124.8634731],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_953fa3189642eae951378f05077f2624 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f754e1e8aaebea61190e47866142f7dc = $(`<div id="html_f754e1e8aaebea61190e47866142f7dc" style="width: 100.0%; height: 100.0%;">Area Name: Kye Bay/Point Holmes<br>Access Name: Wireless Road</div>`)[0];
+                popup_953fa3189642eae951378f05077f2624.setContent(html_f754e1e8aaebea61190e47866142f7dc);
+            
+        
+
+        circle_marker_8494f0d49a4a1b5a3d2f0e010ddb9915.bindPopup(popup_953fa3189642eae951378f05077f2624)
+        ;
+
+        
+    
+    
+            var marker_c2218c65ca56288690b252e361dea5a7 = L.marker(
+                [49.69223144, -124.8679948],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_aa44fed6e536707e8f82819ea7a00be6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_c2218c65ca56288690b252e361dea5a7.setIcon(div_icon_aa44fed6e536707e8f82819ea7a00be6);
+        
+    
+        var popup_f18c7f3ede979c21d20210ab0fb2ef2f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3c0d48b1a70b9dd4c6b2e1a956f3720a = $(`<div id="html_3c0d48b1a70b9dd4c6b2e1a956f3720a" style="width: 100.0%; height: 100.0%;">Area Name: Kye Bay/Point Holmes<br>Access Name: Point Holmes<br>Boat Launch: Paved</div>`)[0];
+                popup_f18c7f3ede979c21d20210ab0fb2ef2f.setContent(html_3c0d48b1a70b9dd4c6b2e1a956f3720a);
+            
+        
+
+        marker_c2218c65ca56288690b252e361dea5a7.bindPopup(popup_f18c7f3ede979c21d20210ab0fb2ef2f)
+        ;
+
+        
+    
+    
+            var circle_marker_0633cb4525cbba410a3d4577b94e316d = L.circleMarker(
+                [49.68337396, -124.8801651],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_d0572cdb4f460c007c8db80cd012db1d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_595694408ab6954b1ebaf32953e2cdf9 = $(`<div id="html_595694408ab6954b1ebaf32953e2cdf9" style="width: 100.0%; height: 100.0%;">Area Name: Curtis Beach<br>Access Name: Andrew Avenue North</div>`)[0];
+                popup_d0572cdb4f460c007c8db80cd012db1d.setContent(html_595694408ab6954b1ebaf32953e2cdf9);
+            
+        
+
+        circle_marker_0633cb4525cbba410a3d4577b94e316d.bindPopup(popup_d0572cdb4f460c007c8db80cd012db1d)
+        ;
+
+        
+    
+    
+            var circle_marker_d0215f595d9a1be3fedd3d2bc88736ca = L.circleMarker(
+                [49.68231978, -124.8810431],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_1fdaf5b48745f78a636f1f74942ef754 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1070fe2a4250c4e4c3ae9ab8319e486a = $(`<div id="html_1070fe2a4250c4e4c3ae9ab8319e486a" style="width: 100.0%; height: 100.0%;">Area Name: Curtis Beach<br>Access Name: Andrew Avenue</div>`)[0];
+                popup_1fdaf5b48745f78a636f1f74942ef754.setContent(html_1070fe2a4250c4e4c3ae9ab8319e486a);
+            
+        
+
+        circle_marker_d0215f595d9a1be3fedd3d2bc88736ca.bindPopup(popup_1fdaf5b48745f78a636f1f74942ef754)
+        ;
+
+        
+    
+    
+            var marker_86d0f3b7b39368911fca04360d5d031b = L.marker(
+                [49.68187372, -124.984195],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_316980784bb5b6fe8d1d0577fb484d74 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_86d0f3b7b39368911fca04360d5d031b.setIcon(div_icon_316980784bb5b6fe8d1d0577fb484d74);
+        
+    
+        var popup_feb6b2543fd738401c435d06ea84bf14 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_94ba7a849b74a0ff5c36ce7c78c0f495 = $(`<div id="html_94ba7a849b74a0ff5c36ce7c78c0f495" style="width: 100.0%; height: 100.0%;">Area Name: Courtenay River Estuary<br>Access Name: Courtenay Marina Park<br>Boat Launch: Paved</div>`)[0];
+                popup_feb6b2543fd738401c435d06ea84bf14.setContent(html_94ba7a849b74a0ff5c36ce7c78c0f495);
+            
+        
+
+        marker_86d0f3b7b39368911fca04360d5d031b.bindPopup(popup_feb6b2543fd738401c435d06ea84bf14)
+        ;
+
+        
+    
+    
+            var circle_marker_5c84bfecd054ef21d9090eed90831957 = L.circleMarker(
+                [49.68166389, -124.8816041],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_1b61572bab228ecce1b0c454de345f2e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6844beccb0094644f775e54040c27c02 = $(`<div id="html_6844beccb0094644f775e54040c27c02" style="width: 100.0%; height: 100.0%;">Area Name: Curtis Beach<br>Access Name: Brent Road</div>`)[0];
+                popup_1b61572bab228ecce1b0c454de345f2e.setContent(html_6844beccb0094644f775e54040c27c02);
+            
+        
+
+        circle_marker_5c84bfecd054ef21d9090eed90831957.bindPopup(popup_1b61572bab228ecce1b0c454de345f2e)
+        ;
+
+        
+    
+    
+            var circle_marker_94ff4e6adf8cfbba3817ff2d029e70aa = L.circleMarker(
+                [49.68034133, -124.8826084],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_9674b1964aa7cb123df97f0aed522e51 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5a01954c064b58cf5079250e0b157efc = $(`<div id="html_5a01954c064b58cf5079250e0b157efc" style="width: 100.0%; height: 100.0%;">Area Name: Curtis Beach<br>Access Name: Cardem Road</div>`)[0];
+                popup_9674b1964aa7cb123df97f0aed522e51.setContent(html_5a01954c064b58cf5079250e0b157efc);
+            
+        
+
+        circle_marker_94ff4e6adf8cfbba3817ff2d029e70aa.bindPopup(popup_9674b1964aa7cb123df97f0aed522e51)
+        ;
+
+        
+    
+    
+            var circle_marker_18b7aff2b1cdd373bc17660d5a1dab3f = L.circleMarker(
+                [49.67837894, -124.8841596],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_61683e7cd004a7ef3148d30edd2a29d7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c161b6af11ab8ebd96c1b83d7d87841d = $(`<div id="html_c161b6af11ab8ebd96c1b83d7d87841d" style="width: 100.0%; height: 100.0%;">Area Name: Curtis Beach<br>Access Name: Bellbouy Road</div>`)[0];
+                popup_61683e7cd004a7ef3148d30edd2a29d7.setContent(html_c161b6af11ab8ebd96c1b83d7d87841d);
+            
+        
+
+        circle_marker_18b7aff2b1cdd373bc17660d5a1dab3f.bindPopup(popup_61683e7cd004a7ef3148d30edd2a29d7)
+        ;
+
+        
+    
+    
+            var circle_marker_a1b6a3f785398894a238a89dc61eeadb = L.circleMarker(
+                [49.67547841, -124.88714],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_6a3c2b8b242141ad7e80b65a39f2f875 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3724fc3cc36a646170f5e90a5bcea49e = $(`<div id="html_3724fc3cc36a646170f5e90a5bcea49e" style="width: 100.0%; height: 100.0%;">Area Name: Curtis Beach<br>Access Name: Allbay Road</div>`)[0];
+                popup_6a3c2b8b242141ad7e80b65a39f2f875.setContent(html_3724fc3cc36a646170f5e90a5bcea49e);
+            
+        
+
+        circle_marker_a1b6a3f785398894a238a89dc61eeadb.bindPopup(popup_6a3c2b8b242141ad7e80b65a39f2f875)
+        ;
+
+        
+    
+    
+            var circle_marker_93a60c939c50997e050f36ccaa53d86d = L.circleMarker(
+                [49.67239601, -124.9390486],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_1ffcf75a5c890d4993f9bdf7efbed48c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_68e644c6e9ec3a8068c61f595e3e7e61 = $(`<div id="html_68e644c6e9ec3a8068c61f595e3e7e61" style="width: 100.0%; height: 100.0%;">Area Name: Comox Habour<br>Access Name: Beach Road</div>`)[0];
+                popup_1ffcf75a5c890d4993f9bdf7efbed48c.setContent(html_68e644c6e9ec3a8068c61f595e3e7e61);
+            
+        
+
+        circle_marker_93a60c939c50997e050f36ccaa53d86d.bindPopup(popup_1ffcf75a5c890d4993f9bdf7efbed48c)
+        ;
+
+        
+    
+    
+            var circle_marker_860697a47c70ac26f21b2e9a2df1900b = L.circleMarker(
+                [49.67226488, -124.8930801],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_4e1c6ba808404592830e93558bd8f0ee = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_83a8e5e2aaa9d1c36306f3c2450716fe = $(`<div id="html_83a8e5e2aaa9d1c36306f3c2450716fe" style="width: 100.0%; height: 100.0%;">Area Name: Cape Lazo/Goose Spit<br>Access Name: Viles Road</div>`)[0];
+                popup_4e1c6ba808404592830e93558bd8f0ee.setContent(html_83a8e5e2aaa9d1c36306f3c2450716fe);
+            
+        
+
+        circle_marker_860697a47c70ac26f21b2e9a2df1900b.bindPopup(popup_4e1c6ba808404592830e93558bd8f0ee)
+        ;
+
+        
+    
+    
+            var circle_marker_da85d7e1b6f22be4c35d53b86a63832f = L.circleMarker(
+                [49.67182138, -124.9358128],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_b2fed944c6cf262b096041ec03890cae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_31a130a4e5735b64a0d5e0e902caff51 = $(`<div id="html_31a130a4e5735b64a0d5e0e902caff51" style="width: 100.0%; height: 100.0%;">Area Name: Comox Habour<br>Access Name: Carthew Street</div>`)[0];
+                popup_b2fed944c6cf262b096041ec03890cae.setContent(html_31a130a4e5735b64a0d5e0e902caff51);
+            
+        
+
+        circle_marker_da85d7e1b6f22be4c35d53b86a63832f.bindPopup(popup_b2fed944c6cf262b096041ec03890cae)
+        ;
+
+        
+    
+    
+            var marker_1a1ad381ad1d756fb013f06585042e11 = L.marker(
+                [49.67080356, -124.9290698],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_0921615f4c359811993c37f5ede3ea2a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_1a1ad381ad1d756fb013f06585042e11.setIcon(div_icon_0921615f4c359811993c37f5ede3ea2a);
+        
+    
+        var popup_324aadc67a27284cf28cb9e552abea34 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cbade563601875097346304f582dbcfc = $(`<div id="html_cbade563601875097346304f582dbcfc" style="width: 100.0%; height: 100.0%;">Area Name: Comox Marina/Goose Spit<br>Access Name: Comox Marina<br>Boat Launch: Paved</div>`)[0];
+                popup_324aadc67a27284cf28cb9e552abea34.setContent(html_cbade563601875097346304f582dbcfc);
+            
+        
+
+        marker_1a1ad381ad1d756fb013f06585042e11.bindPopup(popup_324aadc67a27284cf28cb9e552abea34)
+        ;
+
+        
+    
+    
+            var circle_marker_227f0cb096d12bf25ac9ac3906a4c180 = L.circleMarker(
+                [49.66973604, -124.9160097],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_49e007817f3aadbc6b0b230b5091a1fd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0ce1594fe2e3f170f5d51ecf01f20b64 = $(`<div id="html_0ce1594fe2e3f170f5d51ecf01f20b64" style="width: 100.0%; height: 100.0%;">Area Name: Goose Spit/Comox Harbour<br>Access Name: Filberg Park</div>`)[0];
+                popup_49e007817f3aadbc6b0b230b5091a1fd.setContent(html_0ce1594fe2e3f170f5d51ecf01f20b64);
+            
+        
+
+        circle_marker_227f0cb096d12bf25ac9ac3906a4c180.bindPopup(popup_49e007817f3aadbc6b0b230b5091a1fd)
+        ;
+
+        
+    
+    
+            var circle_marker_d23b5629637af09f1d10fe43f4e27255 = L.circleMarker(
+                [49.66961078, -124.9069888],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_62699afbfff9e34993d9562744149d79 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fc71997a596ab3108d06221cd94ee9da = $(`<div id="html_fc71997a596ab3108d06221cd94ee9da" style="width: 100.0%; height: 100.0%;">Area Name: Goose Spit/Comox Harbour<br>Access Name: Midden Road</div>`)[0];
+                popup_62699afbfff9e34993d9562744149d79.setContent(html_fc71997a596ab3108d06221cd94ee9da);
+            
+        
+
+        circle_marker_d23b5629637af09f1d10fe43f4e27255.bindPopup(popup_62699afbfff9e34993d9562744149d79)
+        ;
+
+        
+    
+    
+            var circle_marker_c9b070dd22b8d3bd19f0367a766c7fcb = L.circleMarker(
+                [49.66949998, -124.9090948],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_816832d4ef0e19c27105be173dfee77e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c7395f02b5bf0b0cd5ef8ec8307bf123 = $(`<div id="html_c7395f02b5bf0b0cd5ef8ec8307bf123" style="width: 100.0%; height: 100.0%;">Area Name: Goose Spit/Comox Harbour<br>Access Name: Croteau Road</div>`)[0];
+                popup_816832d4ef0e19c27105be173dfee77e.setContent(html_c7395f02b5bf0b0cd5ef8ec8307bf123);
+            
+        
+
+        circle_marker_c9b070dd22b8d3bd19f0367a766c7fcb.bindPopup(popup_816832d4ef0e19c27105be173dfee77e)
+        ;
+
+        
+    
+    
+            var circle_marker_0c2fc86ae9601fdba18acdd918e29323 = L.circleMarker(
+                [49.66892803, -124.9051302],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_502249037ed9301d6579e71784fbd99f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b34a71e3652556ff5648a4bc0e1e5fa3 = $(`<div id="html_b34a71e3652556ff5648a4bc0e1e5fa3" style="width: 100.0%; height: 100.0%;">Area Name: Goose Spit/Comox Harbour<br>Access Name: Beech Street</div>`)[0];
+                popup_502249037ed9301d6579e71784fbd99f.setContent(html_b34a71e3652556ff5648a4bc0e1e5fa3);
+            
+        
+
+        circle_marker_0c2fc86ae9601fdba18acdd918e29323.bindPopup(popup_502249037ed9301d6579e71784fbd99f)
+        ;
+
+        
+    
+    
+            var circle_marker_eed0be4a53d184f7a76815dcaf8e03d8 = L.circleMarker(
+                [49.6670916, -124.8995794],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_0d032c210fb22783088290a80c333586 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_688c5eebddc47c855a1c649d6cf7d07d = $(`<div id="html_688c5eebddc47c855a1c649d6cf7d07d" style="width: 100.0%; height: 100.0%;">Area Name: Cape Lazo/Goose Spit<br>Access Name: Hawkins Road</div>`)[0];
+                popup_0d032c210fb22783088290a80c333586.setContent(html_688c5eebddc47c855a1c649d6cf7d07d);
+            
+        
+
+        circle_marker_eed0be4a53d184f7a76815dcaf8e03d8.bindPopup(popup_0d032c210fb22783088290a80c333586)
+        ;
+
+        
+    
+    
+            var circle_marker_262fb45a90f4708193e78952751afdb5 = L.circleMarker(
+                [49.66536359, -124.9710839],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_299c518f1d40523e43df80e37403597a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9ab11d4d6ca2b525398cfa89a9de0021 = $(`<div id="html_9ab11d4d6ca2b525398cfa89a9de0021" style="width: 100.0%; height: 100.0%;">Area Name: Courtenay River Estuary<br>Access Name: Millard Lookout</div>`)[0];
+                popup_299c518f1d40523e43df80e37403597a.setContent(html_9ab11d4d6ca2b525398cfa89a9de0021);
+            
+        
+
+        circle_marker_262fb45a90f4708193e78952751afdb5.bindPopup(popup_299c518f1d40523e43df80e37403597a)
+        ;
+
+        
+    
+    
+            var marker_aa0451b6a67e84ca31aa144ac5184b60 = L.marker(
+                [49.66208656, -124.9153993],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_baf54308ecc9ff6f4da14fb2c3fbdbe9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_aa0451b6a67e84ca31aa144ac5184b60.setIcon(div_icon_baf54308ecc9ff6f4da14fb2c3fbdbe9);
+        
+    
+        var popup_3dca8aac27a3c4f968e5998c14c6b7fa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7b07f86185ae019df0cb8ff49259b62a = $(`<div id="html_7b07f86185ae019df0cb8ff49259b62a" style="width: 100.0%; height: 100.0%;">Area Name: Goose Spit/Comox Harbour<br>Access Name: Comox Yacht Club<br>Boat Launch: Paved</div>`)[0];
+                popup_3dca8aac27a3c4f968e5998c14c6b7fa.setContent(html_7b07f86185ae019df0cb8ff49259b62a);
+            
+        
+
+        marker_aa0451b6a67e84ca31aa144ac5184b60.bindPopup(popup_3dca8aac27a3c4f968e5998c14c6b7fa)
+        ;
+
+        
+    
+    
+            var circle_marker_79fb654f4a73aa41d4cea593d1742ccb = L.circleMarker(
+                [49.66185351, -124.968862],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_89bae49d9acedd04bc4783eeadaaeb4c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bd5385dd93d2edfaccb74254bde0b300 = $(`<div id="html_bd5385dd93d2edfaccb74254bde0b300" style="width: 100.0%; height: 100.0%;">Area Name: Courtenay River Estuary<br>Access Name: Beachwood Road</div>`)[0];
+                popup_89bae49d9acedd04bc4783eeadaaeb4c.setContent(html_bd5385dd93d2edfaccb74254bde0b300);
+            
+        
+
+        circle_marker_79fb654f4a73aa41d4cea593d1742ccb.bindPopup(popup_89bae49d9acedd04bc4783eeadaaeb4c)
+        ;
+
+        
+    
+    
+            var circle_marker_e4c81cb17e19fe961a01404c7bbbcf39 = L.circleMarker(
+                [49.66103472, -124.9262425],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_7ab5e6269bbd125ca60db06ef4d06f0c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_88ae23e438f1ca5f2f1af7cd703a7701 = $(`<div id="html_88ae23e438f1ca5f2f1af7cd703a7701" style="width: 100.0%; height: 100.0%;">Area Name: Comox Marina/Goose Spit<br>Access Name: Goose Spit</div>`)[0];
+                popup_7ab5e6269bbd125ca60db06ef4d06f0c.setContent(html_88ae23e438f1ca5f2f1af7cd703a7701);
+            
+        
+
+        circle_marker_e4c81cb17e19fe961a01404c7bbbcf39.bindPopup(popup_7ab5e6269bbd125ca60db06ef4d06f0c)
+        ;
+
+        
+    
+    
+            var circle_marker_ef7d5a30759da8643973ec9dd2746b06 = L.circleMarker(
+                [49.65769574, -124.9627749],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_ee882eb275a5100e983369e384d4e056 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_29c90f39a42e882b04eb98ae32351e1d = $(`<div id="html_29c90f39a42e882b04eb98ae32351e1d" style="width: 100.0%; height: 100.0%;">Area Name: Courtenay River Estuary<br>Access Name: Chinook Road</div>`)[0];
+                popup_ee882eb275a5100e983369e384d4e056.setContent(html_29c90f39a42e882b04eb98ae32351e1d);
+            
+        
+
+        circle_marker_ef7d5a30759da8643973ec9dd2746b06.bindPopup(popup_ee882eb275a5100e983369e384d4e056)
+        ;
+
+        
+    
+    
+            var circle_marker_512c52b1d34678ca5f0852ce6d1c2622 = L.circleMarker(
+                [49.65523365, -124.9588596],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_10efb80c4e5e21f68698b19ddca4d38f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_40cd7da24803921523613dc0eb79628e = $(`<div id="html_40cd7da24803921523613dc0eb79628e" style="width: 100.0%; height: 100.0%;">Area Name: Royston Seaside/Royston Wrecks<br>Access Name: Thomson Road</div>`)[0];
+                popup_10efb80c4e5e21f68698b19ddca4d38f.setContent(html_40cd7da24803921523613dc0eb79628e);
+            
+        
+
+        circle_marker_512c52b1d34678ca5f0852ce6d1c2622.bindPopup(popup_10efb80c4e5e21f68698b19ddca4d38f)
+        ;
+
+        
+    
+    
+            var circle_marker_82131e27eb473e04553c3751ff1d0579 = L.circleMarker(
+                [49.65252217, -124.9526154],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_363a199591c1256ea876cdd8a323a5ae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fe7e9c2a34cf3d02e92af84023ea9c24 = $(`<div id="html_fe7e9c2a34cf3d02e92af84023ea9c24" style="width: 100.0%; height: 100.0%;">Area Name: Royston Seaside/Royston Wrecks<br>Access Name: Hilton Road</div>`)[0];
+                popup_363a199591c1256ea876cdd8a323a5ae.setContent(html_fe7e9c2a34cf3d02e92af84023ea9c24);
+            
+        
+
+        circle_marker_82131e27eb473e04553c3751ff1d0579.bindPopup(popup_363a199591c1256ea876cdd8a323a5ae)
+        ;
+
+        
+    
+    
+            var circle_marker_581085d1b89896b56c14fdedb37b295d = L.circleMarker(
+                [49.65082766, -124.9511568],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_0193409f85acead7583889ca158aec98 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b39da37085f60daff10aefcbeaa2a5a2 = $(`<div id="html_b39da37085f60daff10aefcbeaa2a5a2" style="width: 100.0%; height: 100.0%;">Area Name: Royston Seaside/Royston Wrecks<br>Access Name: Lince Road</div>`)[0];
+                popup_0193409f85acead7583889ca158aec98.setContent(html_b39da37085f60daff10aefcbeaa2a5a2);
+            
+        
+
+        circle_marker_581085d1b89896b56c14fdedb37b295d.bindPopup(popup_0193409f85acead7583889ca158aec98)
+        ;
+
+        
+    
+    
+            var marker_35269d5f91cfb07ba5e3744e7a9bc4cc = L.marker(
+                [49.64884616, -124.9444236],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_48fabd0976f34d70a028563669b94f3e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_35269d5f91cfb07ba5e3744e7a9bc4cc.setIcon(div_icon_48fabd0976f34d70a028563669b94f3e);
+        
+    
+        var popup_8f1e12aca38229544e562776b432cc65 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e5cc2e239c733fa395949dc5f7a8ecc9 = $(`<div id="html_e5cc2e239c733fa395949dc5f7a8ecc9" style="width: 100.0%; height: 100.0%;">Area Name: Royston Seaside/Royston Wrecks<br>Access Name: Marine Drive<br>Boat Launch: Paved</div>`)[0];
+                popup_8f1e12aca38229544e562776b432cc65.setContent(html_e5cc2e239c733fa395949dc5f7a8ecc9);
+            
+        
+
+        marker_35269d5f91cfb07ba5e3744e7a9bc4cc.bindPopup(popup_8f1e12aca38229544e562776b432cc65)
+        ;
+
+        
+    
+    
+            var circle_marker_90a912b7180fe33cf8546df1b9fbd71a = L.circleMarker(
+                [49.64300515, -124.9312235],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_8a3807297809e61cb24fe386ff981061 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_77d1c90f11e9db26df7e101883efd6b7 = $(`<div id="html_77d1c90f11e9db26df7e101883efd6b7" style="width: 100.0%; height: 100.0%;">Area Name: Trent River/Gartley Beach<br>Access Name: Carey Place</div>`)[0];
+                popup_8a3807297809e61cb24fe386ff981061.setContent(html_77d1c90f11e9db26df7e101883efd6b7);
+            
+        
+
+        circle_marker_90a912b7180fe33cf8546df1b9fbd71a.bindPopup(popup_8a3807297809e61cb24fe386ff981061)
+        ;
+
+        
+    
+    
+            var circle_marker_5e16b24059c2e307508357c75c71ebac = L.circleMarker(
+                [49.64238346, -124.9245165],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_756bed57aba05d509bc0e2b8fa0a542e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_50e635a6825a985c0c32395d95f5d9f5 = $(`<div id="html_50e635a6825a985c0c32395d95f5d9f5" style="width: 100.0%; height: 100.0%;">Area Name: Trent River/Gartley Beach<br>Access Name: Gartley Point Road</div>`)[0];
+                popup_756bed57aba05d509bc0e2b8fa0a542e.setContent(html_50e635a6825a985c0c32395d95f5d9f5);
+            
+        
+
+        circle_marker_5e16b24059c2e307508357c75c71ebac.bindPopup(popup_756bed57aba05d509bc0e2b8fa0a542e)
+        ;
+
+        
+    
+    
+            var circle_marker_fa0917d74c37284420e5007b7340331c = L.circleMarker(
+                [49.64107445, -124.9231565],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_dcc6ae217ff46e8af160c9b1a794e8e5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5148473ed9318646b0e6d0b92dafc58c = $(`<div id="html_5148473ed9318646b0e6d0b92dafc58c" style="width: 100.0%; height: 100.0%;">Area Name: Trent River/Gartley Beach<br>Access Name: Dawn Road</div>`)[0];
+                popup_dcc6ae217ff46e8af160c9b1a794e8e5.setContent(html_5148473ed9318646b0e6d0b92dafc58c);
+            
+        
+
+        circle_marker_fa0917d74c37284420e5007b7340331c.bindPopup(popup_dcc6ae217ff46e8af160c9b1a794e8e5)
+        ;
+
+        
+    
+    
+            var circle_marker_321bda57bfe98aa44fb06d3f19f9a44a = L.circleMarker(
+                [49.63959261, -124.9230395],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_30f99506fe58718471b7fbb795bd95ae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_86d536c98270305a53adabea1f79c649 = $(`<div id="html_86d536c98270305a53adabea1f79c649" style="width: 100.0%; height: 100.0%;">Area Name: Trent River/Gartley Beach<br>Access Name: Bartel Road</div>`)[0];
+                popup_30f99506fe58718471b7fbb795bd95ae.setContent(html_86d536c98270305a53adabea1f79c649);
+            
+        
+
+        circle_marker_321bda57bfe98aa44fb06d3f19f9a44a.bindPopup(popup_30f99506fe58718471b7fbb795bd95ae)
+        ;
+
+        
+    
+    
+            var circle_marker_98ea79ae6d49dbf791a25bc84bbcd76e = L.circleMarker(
+                [49.63775071, -124.9232208],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_5c47405b63539a89f22e7ca0a57c8f9e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fdeeaba4f4bd7c6601a64fda08c1fd58 = $(`<div id="html_fdeeaba4f4bd7c6601a64fda08c1fd58" style="width: 100.0%; height: 100.0%;">Area Name: Trent River/Gartley Beach<br>Access Name: Gartley Road</div>`)[0];
+                popup_5c47405b63539a89f22e7ca0a57c8f9e.setContent(html_fdeeaba4f4bd7c6601a64fda08c1fd58);
+            
+        
+
+        circle_marker_98ea79ae6d49dbf791a25bc84bbcd76e.bindPopup(popup_5c47405b63539a89f22e7ca0a57c8f9e)
+        ;
+
+        
+    
+    
+            var circle_marker_5c02f29a27595d4dd786148797909fcb = L.circleMarker(
+                [49.63501708, -124.9228788],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_14f298da00e723dc1514dd80ce3cc6e8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c30e224c342e23917b9d0354b7aeb3b4 = $(`<div id="html_c30e224c342e23917b9d0354b7aeb3b4" style="width: 100.0%; height: 100.0%;">Area Name: Gartley Beach/Kingfisher<br>Access Name: Slaney Road</div>`)[0];
+                popup_14f298da00e723dc1514dd80ce3cc6e8.setContent(html_c30e224c342e23917b9d0354b7aeb3b4);
+            
+        
+
+        circle_marker_5c02f29a27595d4dd786148797909fcb.bindPopup(popup_14f298da00e723dc1514dd80ce3cc6e8)
+        ;
+
+        
+    
+    
+            var circle_marker_0750bc7fd62a850289cee6f23c8f8ea6 = L.circleMarker(
+                [49.63339445, -124.9195444],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_237e52f557e852642a26703de6e85f18 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6dbe24a5c17c9943a904a3865a51b10b = $(`<div id="html_6dbe24a5c17c9943a904a3865a51b10b" style="width: 100.0%; height: 100.0%;">Area Name: Gartley Beach/Kingfisher<br>Access Name: Loor Road</div>`)[0];
+                popup_237e52f557e852642a26703de6e85f18.setContent(html_6dbe24a5c17c9943a904a3865a51b10b);
+            
+        
+
+        circle_marker_0750bc7fd62a850289cee6f23c8f8ea6.bindPopup(popup_237e52f557e852642a26703de6e85f18)
+        ;
+
+        
+    
+    
+            var circle_marker_7fcaf97b6e3a760b8eceb7b1392bef68 = L.circleMarker(
+                [49.63166404, -124.9163463],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_f9a6b7b2a991ac38497bd569c459f3af = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7ba5c311488ce14e9e791eadba1507c7 = $(`<div id="html_7ba5c311488ce14e9e791eadba1507c7" style="width: 100.0%; height: 100.0%;">Area Name: Gartley Beach/Kingfisher<br>Access Name: Street Lima Road</div>`)[0];
+                popup_f9a6b7b2a991ac38497bd569c459f3af.setContent(html_7ba5c311488ce14e9e791eadba1507c7);
+            
+        
+
+        circle_marker_7fcaf97b6e3a760b8eceb7b1392bef68.bindPopup(popup_f9a6b7b2a991ac38497bd569c459f3af)
+        ;
+
+        
+    
+    
+            var circle_marker_f16a12f713f62bb320130272dca1b03f = L.circleMarker(
+                [49.62893481, -124.9135815],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_2d08ba7bdbee9e267124c4dac7340194 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1eec9818e8997fd0f16f4abc76d2f8cd = $(`<div id="html_1eec9818e8997fd0f16f4abc76d2f8cd" style="width: 100.0%; height: 100.0%;">Area Name: Gartley Beach/Kingfisher<br>Access Name: Deller Road</div>`)[0];
+                popup_2d08ba7bdbee9e267124c4dac7340194.setContent(html_1eec9818e8997fd0f16f4abc76d2f8cd);
+            
+        
+
+        circle_marker_f16a12f713f62bb320130272dca1b03f.bindPopup(popup_2d08ba7bdbee9e267124c4dac7340194)
+        ;
+
+        
+    
+    
+            var circle_marker_3768e853280851e075600e9f12b63d7f = L.circleMarker(
+                [49.62632476, -124.910075],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_e2e2340227fe0bcab39cf7d795f58da9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2caa0a85b4f4264d123af27f70005197 = $(`<div id="html_2caa0a85b4f4264d123af27f70005197" style="width: 100.0%; height: 100.0%;">Area Name: Spindrift<br>Access Name: Ebbtide Road</div>`)[0];
+                popup_e2e2340227fe0bcab39cf7d795f58da9.setContent(html_2caa0a85b4f4264d123af27f70005197);
+            
+        
+
+        circle_marker_3768e853280851e075600e9f12b63d7f.bindPopup(popup_e2e2340227fe0bcab39cf7d795f58da9)
+        ;
+
+        
+    
+    
+            var circle_marker_337cd213593eb28c03b4e3e23b337db3 = L.circleMarker(
+                [49.62454024, -124.9084129],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_1da915a474029efeb9cb396793ce4e67 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f61e7c17eba0383e317797ace31390d0 = $(`<div id="html_f61e7c17eba0383e317797ace31390d0" style="width: 100.0%; height: 100.0%;">Area Name: Spindrift<br>Access Name: Spindrift Road</div>`)[0];
+                popup_1da915a474029efeb9cb396793ce4e67.setContent(html_f61e7c17eba0383e317797ace31390d0);
+            
+        
+
+        circle_marker_337cd213593eb28c03b4e3e23b337db3.bindPopup(popup_1da915a474029efeb9cb396793ce4e67)
+        ;
+
+        
+    
+    
+            var circle_marker_58804b38ee75678df7c6dfa83f31b656 = L.circleMarker(
+                [49.62331224, -124.9084747],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_37e88dde46462c0d7f3b4ae2d7f74d9a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4afafed48eee06068b825e1f809c09fa = $(`<div id="html_4afafed48eee06068b825e1f809c09fa" style="width: 100.0%; height: 100.0%;">Area Name: Spindrift<br>Access Name: Amber Way</div>`)[0];
+                popup_37e88dde46462c0d7f3b4ae2d7f74d9a.setContent(html_4afafed48eee06068b825e1f809c09fa);
+            
+        
+
+        circle_marker_58804b38ee75678df7c6dfa83f31b656.bindPopup(popup_37e88dde46462c0d7f3b4ae2d7f74d9a)
+        ;
+
+        
+    
+    
+            var circle_marker_057432909b627313481c38f85b14135f = L.circleMarker(
+                [49.62136496, -124.9075971],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_bd954688b824dd1de0e347766aa134f8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_352c6809c6aba2e50cdec7bf16cdf930 = $(`<div id="html_352c6809c6aba2e50cdec7bf16cdf930" style="width: 100.0%; height: 100.0%;">Area Name: Spindrift<br>Access Name: Harby Road</div>`)[0];
+                popup_bd954688b824dd1de0e347766aa134f8.setContent(html_352c6809c6aba2e50cdec7bf16cdf930);
+            
+        
+
+        circle_marker_057432909b627313481c38f85b14135f.bindPopup(popup_bd954688b824dd1de0e347766aa134f8)
+        ;
+
+        
+    
+    
+            var circle_marker_4740f7f6852634de24213a26f3f7ad4c = L.circleMarker(
+                [49.61969617, -124.9062692],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_42b4d567f9422d85d05993565451c5ae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_84bdf454228c18884d4d550984d67b1c = $(`<div id="html_84bdf454228c18884d4d550984d67b1c" style="width: 100.0%; height: 100.0%;">Area Name: Spindrift<br>Access Name: Kalmar Road</div>`)[0];
+                popup_42b4d567f9422d85d05993565451c5ae.setContent(html_84bdf454228c18884d4d550984d67b1c);
+            
+        
+
+        circle_marker_4740f7f6852634de24213a26f3f7ad4c.bindPopup(popup_42b4d567f9422d85d05993565451c5ae)
+        ;
+
+        
+    
+    
+            var circle_marker_20129adc402fed473ce4d906d834a408 = L.circleMarker(
+                [49.61755376, -124.905977],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_0508ed493d81c3ec591b809c5741b5f4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0638d2173cc3af7a29592e1af92d5a08 = $(`<div id="html_0638d2173cc3af7a29592e1af92d5a08" style="width: 100.0%; height: 100.0%;">Area Name: Spindrift<br>Access Name: Sanborn Road</div>`)[0];
+                popup_0508ed493d81c3ec591b809c5741b5f4.setContent(html_0638d2173cc3af7a29592e1af92d5a08);
+            
+        
+
+        circle_marker_20129adc402fed473ce4d906d834a408.bindPopup(popup_0508ed493d81c3ec591b809c5741b5f4)
+        ;
+
+        
+    
+    
+            var circle_marker_7c79e483d85fc28cd0d6016a1434c781 = L.circleMarker(
+                [49.61399883, -124.9035218],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_830df749610bdceb4fad0a8388fb5075 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_085ec50a8e9fbd4a69d239026c86af1f = $(`<div id="html_085ec50a8e9fbd4a69d239026c86af1f" style="width: 100.0%; height: 100.0%;">Area Name: Spindrift/Union Bay<br>Access Name: Argyle Road</div>`)[0];
+                popup_830df749610bdceb4fad0a8388fb5075.setContent(html_085ec50a8e9fbd4a69d239026c86af1f);
+            
+        
+
+        circle_marker_7c79e483d85fc28cd0d6016a1434c781.bindPopup(popup_830df749610bdceb4fad0a8388fb5075)
+        ;
+
+        
+    
+    
+            var circle_marker_9dc30ddf6c4608a6a1e91810ba9b739a = L.circleMarker(
+                [49.61118521, -124.9005739],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_242e74b2ee2bc369b651aef390154547 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_202c1869a12e9125412f476c82822090 = $(`<div id="html_202c1869a12e9125412f476c82822090" style="width: 100.0%; height: 100.0%;">Area Name: Spindrift/Union Bay<br>Access Name: Brolin Road</div>`)[0];
+                popup_242e74b2ee2bc369b651aef390154547.setContent(html_202c1869a12e9125412f476c82822090);
+            
+        
+
+        circle_marker_9dc30ddf6c4608a6a1e91810ba9b739a.bindPopup(popup_242e74b2ee2bc369b651aef390154547)
+        ;
+
+        
+    
+    
+            var circle_marker_2859871c614fb3f6d840e94ce85aa59b = L.circleMarker(
+                [49.60776644, -124.8981636],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_5349e92e7d45e2eeef79824a4efe98a7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4140c183da18eb7461829be8fd52c3df = $(`<div id="html_4140c183da18eb7461829be8fd52c3df" style="width: 100.0%; height: 100.0%;">Area Name: Spindrift/Union Bay<br>Access Name: Dorothy Road</div>`)[0];
+                popup_5349e92e7d45e2eeef79824a4efe98a7.setContent(html_4140c183da18eb7461829be8fd52c3df);
+            
+        
+
+        circle_marker_2859871c614fb3f6d840e94ce85aa59b.bindPopup(popup_5349e92e7d45e2eeef79824a4efe98a7)
+        ;
+
+        
+    
+    
+            var circle_marker_712665103fb066e9bb34fcc48bcd95c9 = L.circleMarker(
+                [49.60522789, -124.8960709],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_dd3f8e85c3a5d8d7eea9a4e0eb6bcc1f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dbb17d799bd735a83a3b5a187dcf0a56 = $(`<div id="html_dbb17d799bd735a83a3b5a187dcf0a56" style="width: 100.0%; height: 100.0%;">Area Name: Union Bay<br>Access Name: Spectre Road</div>`)[0];
+                popup_dd3f8e85c3a5d8d7eea9a4e0eb6bcc1f.setContent(html_dbb17d799bd735a83a3b5a187dcf0a56);
+            
+        
+
+        circle_marker_712665103fb066e9bb34fcc48bcd95c9.bindPopup(popup_dd3f8e85c3a5d8d7eea9a4e0eb6bcc1f)
+        ;
+
+        
+    
+    
+            var circle_marker_f6049c38a1bb2453d75399d27872a04c = L.circleMarker(
+                [49.60360332, -124.8947931],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_896efbd0454df07787479b05e7e8ce11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_207bd85b1344f7a1d61e06f5e2bf379b = $(`<div id="html_207bd85b1344f7a1d61e06f5e2bf379b" style="width: 100.0%; height: 100.0%;">Area Name: Union Bay<br>Access Name: Glover Road</div>`)[0];
+                popup_896efbd0454df07787479b05e7e8ce11.setContent(html_207bd85b1344f7a1d61e06f5e2bf379b);
+            
+        
+
+        circle_marker_f6049c38a1bb2453d75399d27872a04c.bindPopup(popup_896efbd0454df07787479b05e7e8ce11)
+        ;
+
+        
+    
+    
+            var circle_marker_8344aff057a43e2a18e1c3e1fd9d818b = L.circleMarker(
+                [49.60198975, -124.8928427],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_ceaa77b84b3bcb722e6b73ecfa3877d7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_47439b8a20e04916f0f69ceae1377ea8 = $(`<div id="html_47439b8a20e04916f0f69ceae1377ea8" style="width: 100.0%; height: 100.0%;">Area Name: Union Bay<br>Access Name: Emmit Road</div>`)[0];
+                popup_ceaa77b84b3bcb722e6b73ecfa3877d7.setContent(html_47439b8a20e04916f0f69ceae1377ea8);
+            
+        
+
+        circle_marker_8344aff057a43e2a18e1c3e1fd9d818b.bindPopup(popup_ceaa77b84b3bcb722e6b73ecfa3877d7)
+        ;
+
+        
+    
+    
+            var marker_4deca0a7346b1aacf8bb166bf585ff3a = L.marker(
+                [49.58430252, -124.8856726],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_cf45e595e0d9f2ef2b04ee3627019c6f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_4deca0a7346b1aacf8bb166bf585ff3a.setIcon(div_icon_cf45e595e0d9f2ef2b04ee3627019c6f);
+        
+    
+        var popup_a3f87ac92e57f91a9bdc393d7bcf99f8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c355e54112562c92babd14798123451f = $(`<div id="html_c355e54112562c92babd14798123451f" style="width: 100.0%; height: 100.0%;">Area Name: Union Bay<br>Access Name: Union Bay<br>Boat Launch: Paved</div>`)[0];
+                popup_a3f87ac92e57f91a9bdc393d7bcf99f8.setContent(html_c355e54112562c92babd14798123451f);
+            
+        
+
+        marker_4deca0a7346b1aacf8bb166bf585ff3a.bindPopup(popup_a3f87ac92e57f91a9bdc393d7bcf99f8)
+        ;
+
+        
+    
+    
+            var circle_marker_5de95b985460f4fe03b56c1b84b299b6 = L.circleMarker(
+                [49.57730207, -124.882087],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_37f57c211f31bfed6dcfb98b7fbea8e7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_427112a3326f94f4563beb36801a3df7 = $(`<div id="html_427112a3326f94f4563beb36801a3df7" style="width: 100.0%; height: 100.0%;">Area Name: Union Bay<br>Access Name: Richards Street</div>`)[0];
+                popup_37f57c211f31bfed6dcfb98b7fbea8e7.setContent(html_427112a3326f94f4563beb36801a3df7);
+            
+        
+
+        circle_marker_5de95b985460f4fe03b56c1b84b299b6.bindPopup(popup_37f57c211f31bfed6dcfb98b7fbea8e7)
+        ;
+
+        
+    
+    
+            var circle_marker_341bcb8f5e13b08d2fe0b884a8e3d8d9 = L.circleMarker(
+                [49.53405319, -124.8567645],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_c6309e42914852b49eaf035d23767379 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5f0374d28786951ae5a231d25385d6ad = $(`<div id="html_5f0374d28786951ae5a231d25385d6ad" style="width: 100.0%; height: 100.0%;">Area Name: Union Bay/Buckley Bay<br>Access Name: Craft Road</div>`)[0];
+                popup_c6309e42914852b49eaf035d23767379.setContent(html_5f0374d28786951ae5a231d25385d6ad);
+            
+        
+
+        circle_marker_341bcb8f5e13b08d2fe0b884a8e3d8d9.bindPopup(popup_c6309e42914852b49eaf035d23767379)
+        ;
+
+        
+    
+    
+            var circle_marker_c09a01448d4c4c40995c0621decc4ecd = L.circleMarker(
+                [49.53215575, -124.8552751],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_cca94f6e03a8c199e05e7ce4058c99b2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c5e357ccebd3ec5fb2e1fa1ec7d358b1 = $(`<div id="html_c5e357ccebd3ec5fb2e1fa1ec7d358b1" style="width: 100.0%; height: 100.0%;">Area Name: Union Bay/Buckley Bay<br>Access Name: McKay Road</div>`)[0];
+                popup_cca94f6e03a8c199e05e7ce4058c99b2.setContent(html_c5e357ccebd3ec5fb2e1fa1ec7d358b1);
+            
+        
+
+        circle_marker_c09a01448d4c4c40995c0621decc4ecd.bindPopup(popup_cca94f6e03a8c199e05e7ce4058c99b2)
+        ;
+
+        
+    
+    
+            var circle_marker_4aad70396b1e7c8b6418e9b030e442d0 = L.circleMarker(
+                [49.5314232, -124.854692],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_e63beedc5e5007d984af733f1e21ba57 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bc608fcafd7768ebb0f452d10998577b = $(`<div id="html_bc608fcafd7768ebb0f452d10998577b" style="width: 100.0%; height: 100.0%;">Area Name: Union Bay/Buckley Bay<br>Access Name: Emerton Road</div>`)[0];
+                popup_e63beedc5e5007d984af733f1e21ba57.setContent(html_bc608fcafd7768ebb0f452d10998577b);
+            
+        
+
+        circle_marker_4aad70396b1e7c8b6418e9b030e442d0.bindPopup(popup_e63beedc5e5007d984af733f1e21ba57)
+        ;
+
+        
+    
+    
+            var circle_marker_df84f80df6d4a1a2c50498f702535730 = L.circleMarker(
+                [49.52758602, -124.8504978],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_a1d947155290687e45807c22538b3fda = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c2b21ae5f8a7166c8507eff16bbd6148 = $(`<div id="html_c2b21ae5f8a7166c8507eff16bbd6148" style="width: 100.0%; height: 100.0%;">Area Name: Union Bay/Buckley Bay<br>Access Name: Ewen Road</div>`)[0];
+                popup_a1d947155290687e45807c22538b3fda.setContent(html_c2b21ae5f8a7166c8507eff16bbd6148);
+            
+        
+
+        circle_marker_df84f80df6d4a1a2c50498f702535730.bindPopup(popup_a1d947155290687e45807c22538b3fda)
+        ;
+
+        
+    
+    
+            var circle_marker_e25f333677cd026e328e05f1e28f0f86 = L.circleMarker(
+                [49.5260001, -124.8489206],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_778224a52035fa03cb48f9e16e3991dc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1c7364e40b9fcbe71a99bc89d41a0061 = $(`<div id="html_1c7364e40b9fcbe71a99bc89d41a0061" style="width: 100.0%; height: 100.0%;">Area Name: Union Bay/Buckley Bay<br>Access Name: Ackroyd Road</div>`)[0];
+                popup_778224a52035fa03cb48f9e16e3991dc.setContent(html_1c7364e40b9fcbe71a99bc89d41a0061);
+            
+        
+
+        circle_marker_e25f333677cd026e328e05f1e28f0f86.bindPopup(popup_778224a52035fa03cb48f9e16e3991dc)
+        ;
+
+        
+    
+    
+            var circle_marker_9d55da7252a7aab59f9604b1baba6c27 = L.circleMarker(
+                [49.50467741, -124.8072347],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_66a4fc7f1c33196d00d514a091d8152e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bde5ff59c97e82ff2632f95cc459104e = $(`<div id="html_bde5ff59c97e82ff2632f95cc459104e" style="width: 100.0%; height: 100.0%;">Area Name: Ship's Point<br>Access Name: Beach Cottage</div>`)[0];
+                popup_66a4fc7f1c33196d00d514a091d8152e.setContent(html_bde5ff59c97e82ff2632f95cc459104e);
+            
+        
+
+        circle_marker_9d55da7252a7aab59f9604b1baba6c27.bindPopup(popup_66a4fc7f1c33196d00d514a091d8152e)
+        ;
+
+        
+    
+    
+            var circle_marker_e345dff718acf8927e90b462d8357f98 = L.circleMarker(
+                [49.50326328, -124.8015438],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_97721a7de9a60ee6a3a99dd50d570d75 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7fc6b24acaddd97362d5210989632ac1 = $(`<div id="html_7fc6b24acaddd97362d5210989632ac1" style="width: 100.0%; height: 100.0%;">Area Name: Ship's Point<br>Access Name: Vivian Way</div>`)[0];
+                popup_97721a7de9a60ee6a3a99dd50d570d75.setContent(html_7fc6b24acaddd97362d5210989632ac1);
+            
+        
+
+        circle_marker_e345dff718acf8927e90b462d8357f98.bindPopup(popup_97721a7de9a60ee6a3a99dd50d570d75)
+        ;
+
+        
+    
+    
+            var circle_marker_38a486d1d29fc52be3eaefdc7f905166 = L.circleMarker(
+                [49.50152969, -124.8076733],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_78b6d22aa30cf2f39938815da1706b64 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5b12c3016279580b37c9716758e52131 = $(`<div id="html_5b12c3016279580b37c9716758e52131" style="width: 100.0%; height: 100.0%;">Area Name: Ship's Point<br>Access Name: Tozer Road</div>`)[0];
+                popup_78b6d22aa30cf2f39938815da1706b64.setContent(html_5b12c3016279580b37c9716758e52131);
+            
+        
+
+        circle_marker_38a486d1d29fc52be3eaefdc7f905166.bindPopup(popup_78b6d22aa30cf2f39938815da1706b64)
+        ;
+
+        
+    
+    
+            var circle_marker_8444f5be6508ec7b2ee5745b7a1d0b35 = L.circleMarker(
+                [49.49940786, -124.7958814],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_944a7dff949d40f3fa024d1979cd0318 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2f816cbdbedeb08a7ded559b23a4fa5b = $(`<div id="html_2f816cbdbedeb08a7ded559b23a4fa5b" style="width: 100.0%; height: 100.0%;">Area Name: Ship's Point<br>Access Name: Aboyne Road</div>`)[0];
+                popup_944a7dff949d40f3fa024d1979cd0318.setContent(html_2f816cbdbedeb08a7ded559b23a4fa5b);
+            
+        
+
+        circle_marker_8444f5be6508ec7b2ee5745b7a1d0b35.bindPopup(popup_944a7dff949d40f3fa024d1979cd0318)
+        ;
+
+        
+    
+    
+            var circle_marker_62432415fd3676c6a496d0e1ebab1f0e = L.circleMarker(
+                [49.49672445, -124.7922765],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_94e150dbc083bafe5c1ba0b8e21e39e2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6bfa031d807eb951c7a3be7b1975016a = $(`<div id="html_6bfa031d807eb951c7a3be7b1975016a" style="width: 100.0%; height: 100.0%;">Area Name: Ship's Point<br>Access Name: Ships Point Road</div>`)[0];
+                popup_94e150dbc083bafe5c1ba0b8e21e39e2.setContent(html_6bfa031d807eb951c7a3be7b1975016a);
+            
+        
+
+        circle_marker_62432415fd3676c6a496d0e1ebab1f0e.bindPopup(popup_94e150dbc083bafe5c1ba0b8e21e39e2)
+        ;
+
+        
+    
+    
+            var circle_marker_1b6e239fe4f853bf1348f809f0b789b6 = L.circleMarker(
+                [49.49452957, -124.8195273],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_bcb9c6b7b58a35a3fc3b3c6c538801db = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_01427d1a287f944dfe18aa605dc845a8 = $(`<div id="html_01427d1a287f944dfe18aa605dc845a8" style="width: 100.0%; height: 100.0%;">Area Name: Buckley Bay/Fanny Bay<br>Access Name: E.Y.C. Trail</div>`)[0];
+                popup_bcb9c6b7b58a35a3fc3b3c6c538801db.setContent(html_01427d1a287f944dfe18aa605dc845a8);
+            
+        
+
+        circle_marker_1b6e239fe4f853bf1348f809f0b789b6.bindPopup(popup_bcb9c6b7b58a35a3fc3b3c6c538801db)
+        ;
+
+        
+    
+    
+            var circle_marker_d39b618e536583013b29c50ed95ea705 = L.circleMarker(
+                [49.49452864, -124.7974961],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_723e8144830be46d74f9309dc086f4f2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dcc43c1f338b7a41b0f2e69857a60ca6 = $(`<div id="html_dcc43c1f338b7a41b0f2e69857a60ca6" style="width: 100.0%; height: 100.0%;">Area Name: Ship's Point<br>Access Name: Yellow Bench</div>`)[0];
+                popup_723e8144830be46d74f9309dc086f4f2.setContent(html_dcc43c1f338b7a41b0f2e69857a60ca6);
+            
+        
+
+        circle_marker_d39b618e536583013b29c50ed95ea705.bindPopup(popup_723e8144830be46d74f9309dc086f4f2)
+        ;
+
+        
+    
+    
+            var marker_9f239473af3591e5367286bff4ab2a7f = L.marker(
+                [49.49168548, -124.7908994],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_14a469d6427da8aba1b457cb2d73cda1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: red; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_9f239473af3591e5367286bff4ab2a7f.setIcon(div_icon_14a469d6427da8aba1b457cb2d73cda1);
+        
+    
+        var popup_de5283b2c55ebee2fa6b6906ff5686db = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8c98de0d9c8bd9407aa83a56c4f98292 = $(`<div id="html_8c98de0d9c8bd9407aa83a56c4f98292" style="width: 100.0%; height: 100.0%;">Area Name: Wilfred Creek<br>Access Name: Ship's Point Park<br>Boat Launch: Rough</div>`)[0];
+                popup_de5283b2c55ebee2fa6b6906ff5686db.setContent(html_8c98de0d9c8bd9407aa83a56c4f98292);
+            
+        
+
+        marker_9f239473af3591e5367286bff4ab2a7f.bindPopup(popup_de5283b2c55ebee2fa6b6906ff5686db)
+        ;
+
+        
+    
+    
+            var circle_marker_767eaa6abfdb421640e1d019671d1d95 = L.circleMarker(
+                [49.49026021, -124.7968005],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_0245948a7ddfdf84cdf9246eb4cecc49 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9af612c77bd2b7318bdc28d03d0e869b = $(`<div id="html_9af612c77bd2b7318bdc28d03d0e869b" style="width: 100.0%; height: 100.0%;">Area Name: Wilfred Creek<br>Access Name: Streetern Road</div>`)[0];
+                popup_0245948a7ddfdf84cdf9246eb4cecc49.setContent(html_9af612c77bd2b7318bdc28d03d0e869b);
+            
+        
+
+        circle_marker_767eaa6abfdb421640e1d019671d1d95.bindPopup(popup_0245948a7ddfdf84cdf9246eb4cecc49)
+        ;
+
+        
+    
+    
+            var circle_marker_3e57f2d8bc463c5093e64d403f1f7572 = L.circleMarker(
+                [49.48735131, -124.7971084],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_ef3b0338e54e494e3a63639dd1bc3107 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ace18c704f6caf9c13bbacd79a9cff95 = $(`<div id="html_ace18c704f6caf9c13bbacd79a9cff95" style="width: 100.0%; height: 100.0%;">Area Name: Wilfred Creek<br>Access Name: White Duck Road</div>`)[0];
+                popup_ef3b0338e54e494e3a63639dd1bc3107.setContent(html_ace18c704f6caf9c13bbacd79a9cff95);
+            
+        
+
+        circle_marker_3e57f2d8bc463c5093e64d403f1f7572.bindPopup(popup_ef3b0338e54e494e3a63639dd1bc3107)
+        ;
+
+        
+    
+    
+            var circle_marker_2d4f7c2d11489b7dec2023ba5c098903 = L.circleMarker(
+                [49.48231665, -124.7986327],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_5c3e1882ca76150c9d56fdd594a40783 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b2dfc6d3de472d39e0f8e243f158ecb7 = $(`<div id="html_b2dfc6d3de472d39e0f8e243f158ecb7" style="width: 100.0%; height: 100.0%;">Area Name: Wilfred Creek<br>Access Name: Hastings Road</div>`)[0];
+                popup_5c3e1882ca76150c9d56fdd594a40783.setContent(html_b2dfc6d3de472d39e0f8e243f158ecb7);
+            
+        
+
+        circle_marker_2d4f7c2d11489b7dec2023ba5c098903.bindPopup(popup_5c3e1882ca76150c9d56fdd594a40783)
+        ;
+
+        
+    
+    
+            var circle_marker_0090b72b975e97705fce36581f565ba2 = L.circleMarker(
+                [49.47949051, -124.7995475],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_4751c8513227142c8fe97cad3e712f6a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5ed0127067b9573a8eb8f0902ca47ebd = $(`<div id="html_5ed0127067b9573a8eb8f0902ca47ebd" style="width: 100.0%; height: 100.0%;">Area Name: Mud Bay<br>Access Name: Ackinclose Creek</div>`)[0];
+                popup_4751c8513227142c8fe97cad3e712f6a.setContent(html_5ed0127067b9573a8eb8f0902ca47ebd);
+            
+        
+
+        circle_marker_0090b72b975e97705fce36581f565ba2.bindPopup(popup_4751c8513227142c8fe97cad3e712f6a)
+        ;
+
+        
+    
+    
+            var circle_marker_06e1740ad1e3eb1388c12992f551b6ae = L.circleMarker(
+                [49.47677647, -124.7961973],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_a02f41dfad710d1d222221e3fb33e79b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_301bb9c0c6315f612b1cad18afd54b23 = $(`<div id="html_301bb9c0c6315f612b1cad18afd54b23" style="width: 100.0%; height: 100.0%;">Area Name: Mud Bay<br>Access Name: Arbutus Bay Road</div>`)[0];
+                popup_a02f41dfad710d1d222221e3fb33e79b.setContent(html_301bb9c0c6315f612b1cad18afd54b23);
+            
+        
+
+        circle_marker_06e1740ad1e3eb1388c12992f551b6ae.bindPopup(popup_a02f41dfad710d1d222221e3fb33e79b)
+        ;
+
+        
+    
+    
+            var marker_7d913b5eecf5f58dceb76cc11e595a5f = L.marker(
+                [49.47253847, -124.7918362],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_13fe3b147cb3206c2b694dbbd824014f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_7d913b5eecf5f58dceb76cc11e595a5f.setIcon(div_icon_13fe3b147cb3206c2b694dbbd824014f);
+        
+    
+        var popup_b84ddb8ce056f26243e1507e954c3260 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b3eb6cb16909c17a2a4995fda5f7e13a = $(`<div id="html_b3eb6cb16909c17a2a4995fda5f7e13a" style="width: 100.0%; height: 100.0%;">Area Name: Mud Bay<br>Access Name: Lighthouse Rv Park<br>Boat Launch: Paved</div>`)[0];
+                popup_b84ddb8ce056f26243e1507e954c3260.setContent(html_b3eb6cb16909c17a2a4995fda5f7e13a);
+            
+        
+
+        marker_7d913b5eecf5f58dceb76cc11e595a5f.bindPopup(popup_b84ddb8ce056f26243e1507e954c3260)
+        ;
+
+        
+    
+    
+            var circle_marker_bb8c35c298976df8528381dc5400bfb1 = L.circleMarker(
+                [49.47077866, -124.7941063],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_3863e0163e162e3ae517dcbc6120fc4e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dc19d76f3552eae2d4676d47da85750d = $(`<div id="html_dc19d76f3552eae2d4676d47da85750d" style="width: 100.0%; height: 100.0%;">Area Name: Mud Bay<br>Access Name: Abbey Road</div>`)[0];
+                popup_3863e0163e162e3ae517dcbc6120fc4e.setContent(html_dc19d76f3552eae2d4676d47da85750d);
+            
+        
+
+        circle_marker_bb8c35c298976df8528381dc5400bfb1.bindPopup(popup_3863e0163e162e3ae517dcbc6120fc4e)
+        ;
+
+        
+    
+    
+            var circle_marker_f948d87d6b3526787df93847ed681609 = L.circleMarker(
+                [49.46789441, -124.7728431],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_14c0780e06d10b754964953e4c4b9f6f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d65547b359125364109b0522483ceaab = $(`<div id="html_d65547b359125364109b0522483ceaab" style="width: 100.0%; height: 100.0%;">Area Name: Rosewall Creek<br>Access Name: Berray Road</div>`)[0];
+                popup_14c0780e06d10b754964953e4c4b9f6f.setContent(html_d65547b359125364109b0522483ceaab);
+            
+        
+
+        circle_marker_f948d87d6b3526787df93847ed681609.bindPopup(popup_14c0780e06d10b754964953e4c4b9f6f)
+        ;
+
+        
+    
+    
+            var circle_marker_a75912dd2d26bab15f2cb96969342cd6 = L.circleMarker(
+                [49.46705512, -124.7247751],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_21b44b7cd7bf629e34b3d0a036e15070 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7023f5a9e95f535dc87600fec9aecb1e = $(`<div id="html_7023f5a9e95f535dc87600fec9aecb1e" style="width: 100.0%; height: 100.0%;">Area Name: Deep Bay<br>Access Name: Wheelchair Bench</div>`)[0];
+                popup_21b44b7cd7bf629e34b3d0a036e15070.setContent(html_7023f5a9e95f535dc87600fec9aecb1e);
+            
+        
+
+        circle_marker_a75912dd2d26bab15f2cb96969342cd6.bindPopup(popup_21b44b7cd7bf629e34b3d0a036e15070)
+        ;
+
+        
+    
+    
+            var circle_marker_a1c29b04c018bc577f899acc521bb60b = L.circleMarker(
+                [49.46696462, -124.7257779],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_c9c1830496e78d57aeb8698ac9d2a3b1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_148fbd6659dca2121bd1a6280b4e9b21 = $(`<div id="html_148fbd6659dca2121bd1a6280b4e9b21" style="width: 100.0%; height: 100.0%;">Area Name: Deep Bay<br>Access Name: Boat Basin</div>`)[0];
+                popup_c9c1830496e78d57aeb8698ac9d2a3b1.setContent(html_148fbd6659dca2121bd1a6280b4e9b21);
+            
+        
+
+        circle_marker_a1c29b04c018bc577f899acc521bb60b.bindPopup(popup_c9c1830496e78d57aeb8698ac9d2a3b1)
+        ;
+
+        
+    
+    
+            var circle_marker_185c3769ee3eff8e4f784d4ada14f23a = L.circleMarker(
+                [49.46671463, -124.7691231],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_b5a1623b70f8daff9bd159b7027c3d3c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_244a7326ca24d816176f9c2b7009dca2 = $(`<div id="html_244a7326ca24d816176f9c2b7009dca2" style="width: 100.0%; height: 100.0%;">Area Name: Rosewall Creek<br>Access Name: Wavell Road</div>`)[0];
+                popup_b5a1623b70f8daff9bd159b7027c3d3c.setContent(html_244a7326ca24d816176f9c2b7009dca2);
+            
+        
+
+        circle_marker_185c3769ee3eff8e4f784d4ada14f23a.bindPopup(popup_b5a1623b70f8daff9bd159b7027c3d3c)
+        ;
+
+        
+    
+    
+            var circle_marker_a4f3906c0ef8909be5505475c69af250 = L.circleMarker(
+                [49.4666814, -124.7704206],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_6f3740239df5c5b27fe5118995da7e92 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1d7a4fbe4e40fec73e7f01c0c240511f = $(`<div id="html_1d7a4fbe4e40fec73e7f01c0c240511f" style="width: 100.0%; height: 100.0%;">Area Name: Rosewall Creek<br>Access Name: Rosewall Beach</div>`)[0];
+                popup_6f3740239df5c5b27fe5118995da7e92.setContent(html_1d7a4fbe4e40fec73e7f01c0c240511f);
+            
+        
+
+        circle_marker_a4f3906c0ef8909be5505475c69af250.bindPopup(popup_6f3740239df5c5b27fe5118995da7e92)
+        ;
+
+        
+    
+    
+            var circle_marker_977ea6685868be3859525ee8f6b78965 = L.circleMarker(
+                [49.46602316, -124.7351246],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_17d5a83a4f3d19ec0489255a7f335418 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9535e0a0064c01ae32d7987534782a0a = $(`<div id="html_9535e0a0064c01ae32d7987534782a0a" style="width: 100.0%; height: 100.0%;">Area Name: Deep Bay<br>Access Name: Harbour Light</div>`)[0];
+                popup_17d5a83a4f3d19ec0489255a7f335418.setContent(html_9535e0a0064c01ae32d7987534782a0a);
+            
+        
+
+        circle_marker_977ea6685868be3859525ee8f6b78965.bindPopup(popup_17d5a83a4f3d19ec0489255a7f335418)
+        ;
+
+        
+    
+    
+            var circle_marker_134190a5075049472ba94d335f0f9ba5 = L.circleMarker(
+                [49.46600288, -124.7935131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_6c92d7d1c6cfbce244cce3c2de973409 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_428944e86ddc137e821c9d92dd50a908 = $(`<div id="html_428944e86ddc137e821c9d92dd50a908" style="width: 100.0%; height: 100.0%;">Area Name: Mud Bay<br>Access Name: Lund Road</div>`)[0];
+                popup_6c92d7d1c6cfbce244cce3c2de973409.setContent(html_428944e86ddc137e821c9d92dd50a908);
+            
+        
+
+        circle_marker_134190a5075049472ba94d335f0f9ba5.bindPopup(popup_6c92d7d1c6cfbce244cce3c2de973409)
+        ;
+
+        
+    
+    
+            var circle_marker_0209f31d42466d7b93808fe65ceab606 = L.circleMarker(
+                [49.46493488, -124.7936311],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_0db812f8276e44510cdb005d0e9461c8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a396b9798bc44a8748080a833bbf1728 = $(`<div id="html_a396b9798bc44a8748080a833bbf1728" style="width: 100.0%; height: 100.0%;">Area Name: Mud Bay<br>Access Name: Newcastle Road</div>`)[0];
+                popup_0db812f8276e44510cdb005d0e9461c8.setContent(html_a396b9798bc44a8748080a833bbf1728);
+            
+        
+
+        circle_marker_0209f31d42466d7b93808fe65ceab606.bindPopup(popup_0db812f8276e44510cdb005d0e9461c8)
+        ;
+
+        
+    
+    
+            var marker_77f3a5487fde50cc8312c515b08211d4 = L.marker(
+                [49.46470377, -124.7277036],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_fa67e9752f00fd111156b50b87603715 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: yellow; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_77f3a5487fde50cc8312c515b08211d4.setIcon(div_icon_fa67e9752f00fd111156b50b87603715);
+        
+    
+        var popup_b40da2a76ea9cd9a0ec492919e9a77f9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0b125053c7f3f7c631a7011c8c50146c = $(`<div id="html_0b125053c7f3f7c631a7011c8c50146c" style="width: 100.0%; height: 100.0%;">Area Name: Deep Bay<br>Access Name: Deep Bay<br>Boat Launch: Paved</div>`)[0];
+                popup_b40da2a76ea9cd9a0ec492919e9a77f9.setContent(html_0b125053c7f3f7c631a7011c8c50146c);
+            
+        
+
+        marker_77f3a5487fde50cc8312c515b08211d4.bindPopup(popup_b40da2a76ea9cd9a0ec492919e9a77f9)
+        ;
+
+        
+    
+    
+            var circle_marker_597ed967a1b0c9bfbd25edb2676c7bb5 = L.circleMarker(
+                [49.46289851, -124.7923921],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_32fab5bcb4e713bc4098fc5549f73c55 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8a72ed60627b1e28cd3110bd10925ec6 = $(`<div id="html_8a72ed60627b1e28cd3110bd10925ec6" style="width: 100.0%; height: 100.0%;">Area Name: Mud Bay<br>Access Name: Mud Bay Road</div>`)[0];
+                popup_32fab5bcb4e713bc4098fc5549f73c55.setContent(html_8a72ed60627b1e28cd3110bd10925ec6);
+            
+        
+
+        circle_marker_597ed967a1b0c9bfbd25edb2676c7bb5.bindPopup(popup_32fab5bcb4e713bc4098fc5549f73c55)
+        ;
+
+        
+    
+    
+            var circle_marker_cac4c7d1a18ff4a1620cabf3245ee602 = L.circleMarker(
+                [49.46279321, -124.7224114],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_108c187f45aa6693f1e2b38ae39bc1dc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3c6bdd64904e145fc3307ef502450f3a = $(`<div id="html_3c6bdd64904e145fc3307ef502450f3a" style="width: 100.0%; height: 100.0%;">Area Name: Deep Bay<br>Access Name: R.V. Park</div>`)[0];
+                popup_108c187f45aa6693f1e2b38ae39bc1dc.setContent(html_3c6bdd64904e145fc3307ef502450f3a);
+            
+        
+
+        circle_marker_cac4c7d1a18ff4a1620cabf3245ee602.bindPopup(popup_108c187f45aa6693f1e2b38ae39bc1dc)
+        ;
+
+        
+    
+    
+            var circle_marker_f58d2ec1ce7f527f3cd95cc096a8b3bb = L.circleMarker(
+                [49.46180561, -124.7876737],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_197a45c0e5c6b010d99c03298da8efb6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ec243d650bcf4183a42323225472a60d = $(`<div id="html_ec243d650bcf4183a42323225472a60d" style="width: 100.0%; height: 100.0%;">Area Name: Mud Bay<br>Access Name: Curran Road</div>`)[0];
+                popup_197a45c0e5c6b010d99c03298da8efb6.setContent(html_ec243d650bcf4183a42323225472a60d);
+            
+        
+
+        circle_marker_f58d2ec1ce7f527f3cd95cc096a8b3bb.bindPopup(popup_197a45c0e5c6b010d99c03298da8efb6)
+        ;
+
+        
+    
+    
+            var circle_marker_06caf710c4f3d18f8a21b1fed312214e = L.circleMarker(
+                [49.45609704, -124.7089715],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_df2c7daa9a9e7b89bf2b10a82443839a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_afd61bba30eb58780fab5fff2e75a556 = $(`<div id="html_afd61bba30eb58780fab5fff2e75a556" style="width: 100.0%; height: 100.0%;">Area Name: Deep Bay<br>Access Name: Fire Plug</div>`)[0];
+                popup_df2c7daa9a9e7b89bf2b10a82443839a.setContent(html_afd61bba30eb58780fab5fff2e75a556);
+            
+        
+
+        circle_marker_06caf710c4f3d18f8a21b1fed312214e.bindPopup(popup_df2c7daa9a9e7b89bf2b10a82443839a)
+        ;
+
+        
+    
+    
+            var circle_marker_af46642a2d27031e0d01290d7138c796 = L.circleMarker(
+                [49.4537975, -124.7059846],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_a32dff2aec46eb16a68d1b93039c7f00 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5e2a95cb282f59798fd5a3cf22e6cebf = $(`<div id="html_5e2a95cb282f59798fd5a3cf22e6cebf" style="width: 100.0%; height: 100.0%;">Area Name: Deep Bay<br>Access Name: Shoreline Drive</div>`)[0];
+                popup_a32dff2aec46eb16a68d1b93039c7f00.setContent(html_5e2a95cb282f59798fd5a3cf22e6cebf);
+            
+        
+
+        circle_marker_af46642a2d27031e0d01290d7138c796.bindPopup(popup_a32dff2aec46eb16a68d1b93039c7f00)
+        ;
+
+        
+    
+    
+            var circle_marker_f27c537922cff6e8d3f519e3ce87f083 = L.circleMarker(
+                [49.4450607, -124.6812979],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_9ea9cfcd57a3cfb77a9d56ead3a8dd64 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fc1bbe3f8976c4429dffa40226da0dbb = $(`<div id="html_fc1bbe3f8976c4429dffa40226da0dbb" style="width: 100.0%; height: 100.0%;">Area Name: Deep Bay<br>Access Name: Buccaneer Beach</div>`)[0];
+                popup_9ea9cfcd57a3cfb77a9d56ead3a8dd64.setContent(html_fc1bbe3f8976c4429dffa40226da0dbb);
+            
+        
+
+        circle_marker_f27c537922cff6e8d3f519e3ce87f083.bindPopup(popup_9ea9cfcd57a3cfb77a9d56ead3a8dd64)
+        ;
+
+        
+    
+    
+            var circle_marker_81962227febac0aa2de44258a3285bd6 = L.circleMarker(
+                [49.43450162, -124.6652859],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_559568150bae848441877ffd156919a0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3e8c0501844cc619642f2803b5211a17 = $(`<div id="html_3e8c0501844cc619642f2803b5211a17" style="width: 100.0%; height: 100.0%;">Area Name: Bowser<br>Access Name: Bowser Bill's</div>`)[0];
+                popup_559568150bae848441877ffd156919a0.setContent(html_3e8c0501844cc619642f2803b5211a17);
+            
+        
+
+        circle_marker_81962227febac0aa2de44258a3285bd6.bindPopup(popup_559568150bae848441877ffd156919a0)
+        ;
+
+        
+    
+    
+            var marker_dfcb195e84ba448de1284a176f21486e = L.marker(
+                [49.42479852, -124.6501471],
+                {}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+            var div_icon_e131f21e1693b96afa503d97f27cab45 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027background-color: red; width: 10px; height: 10px;\u0027\u003e\u003c/div\u003e"});
+            marker_dfcb195e84ba448de1284a176f21486e.setIcon(div_icon_e131f21e1693b96afa503d97f27cab45);
+        
+    
+        var popup_24591ef9b92ae9914d6902c1dcfb8f3d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fb7ff5000c8876202f926c7d1ebf2da3 = $(`<div id="html_fb7ff5000c8876202f926c7d1ebf2da3" style="width: 100.0%; height: 100.0%;">Area Name: Nile Creek<br>Access Name: Gladys Road<br>Boat Launch: Rough</div>`)[0];
+                popup_24591ef9b92ae9914d6902c1dcfb8f3d.setContent(html_fb7ff5000c8876202f926c7d1ebf2da3);
+            
+        
+
+        marker_dfcb195e84ba448de1284a176f21486e.bindPopup(popup_24591ef9b92ae9914d6902c1dcfb8f3d)
+        ;
+
+        
+    
+    
+            var circle_marker_13379d01999aa61368200263ec9db54d = L.circleMarker(
+                [49.42424901, -124.6475404],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_83d3a4a0fb87d075e56b164a3eb6e19d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bfc89f3ba041282248990c4f308cd67a = $(`<div id="html_bfc89f3ba041282248990c4f308cd67a" style="width: 100.0%; height: 100.0%;">Area Name: Nile Creek<br>Access Name: Henson Road</div>`)[0];
+                popup_83d3a4a0fb87d075e56b164a3eb6e19d.setContent(html_bfc89f3ba041282248990c4f308cd67a);
+            
+        
+
+        circle_marker_13379d01999aa61368200263ec9db54d.bindPopup(popup_83d3a4a0fb87d075e56b164a3eb6e19d)
+        ;
+
+        
+    
+    
+            var circle_marker_552adef14b32e375c06b4b8473810286 = L.circleMarker(
+                [49.42230429, -124.6438797],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_6a75fb0d3036783cc14e794f69d8dc3e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dc2ab2f88a9e6f67daa61d6ad6d569f4 = $(`<div id="html_dc2ab2f88a9e6f67daa61d6ad6d569f4" style="width: 100.0%; height: 100.0%;">Area Name: Nile Creek<br>Access Name: Power Station</div>`)[0];
+                popup_6a75fb0d3036783cc14e794f69d8dc3e.setContent(html_dc2ab2f88a9e6f67daa61d6ad6d569f4);
+            
+        
+
+        circle_marker_552adef14b32e375c06b4b8473810286.bindPopup(popup_6a75fb0d3036783cc14e794f69d8dc3e)
+        ;
+
+        
+    
+    
+            var circle_marker_572e37d771a21b65fa8e36f0af30a70b = L.circleMarker(
+                [49.42013345, -124.6423554],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_ebceffa81bf292ae3704836d444a363f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_20c9c55732b5e912866b82cd45483671 = $(`<div id="html_20c9c55732b5e912866b82cd45483671" style="width: 100.0%; height: 100.0%;">Area Name: Nile Creek<br>Access Name: Nile Creek</div>`)[0];
+                popup_ebceffa81bf292ae3704836d444a363f.setContent(html_20c9c55732b5e912866b82cd45483671);
+            
+        
+
+        circle_marker_572e37d771a21b65fa8e36f0af30a70b.bindPopup(popup_ebceffa81bf292ae3704836d444a363f)
+        ;
+
+        
+    
+    
+            var circle_marker_78a63919dbae629120338d437b0a921b = L.circleMarker(
+                [49.41570791, -124.6392282],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_ffe2ee40e1f3a1803548bbccc7206e26 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_19928dbd65c55ff5d9650afd87891969 = $(`<div id="html_19928dbd65c55ff5d9650afd87891969" style="width: 100.0%; height: 100.0%;">Area Name: Nile Creek<br>Access Name: Boulder Garden</div>`)[0];
+                popup_ffe2ee40e1f3a1803548bbccc7206e26.setContent(html_19928dbd65c55ff5d9650afd87891969);
+            
+        
+
+        circle_marker_78a63919dbae629120338d437b0a921b.bindPopup(popup_ffe2ee40e1f3a1803548bbccc7206e26)
+        ;
+
+        
+    
+    
+            var circle_marker_5d27a55eabddf43d353bc7f5d9b1d742 = L.circleMarker(
+                [49.40743127, -124.6341656],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_3af5fc47eb34c71d54622663486b649f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6242733af71633af3eb9ccd212be86e1 = $(`<div id="html_6242733af71633af3eb9ccd212be86e1" style="width: 100.0%; height: 100.0%;">Area Name: Nile Creek<br>Access Name: Sunny Beach Road</div>`)[0];
+                popup_3af5fc47eb34c71d54622663486b649f.setContent(html_6242733af71633af3eb9ccd212be86e1);
+            
+        
+
+        circle_marker_5d27a55eabddf43d353bc7f5d9b1d742.bindPopup(popup_3af5fc47eb34c71d54622663486b649f)
+        ;
+
+        
+    
+    
+            var circle_marker_dc75c094fb2afd20543f381f5c0f337a = L.circleMarker(
+                [49.64529359, -124.9346733],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_897551e8a5a007913114c70a9bd9fcee = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_da4c6f2b0a9377adad4f5ff504151a48 = $(`<div id="html_da4c6f2b0a9377adad4f5ff504151a48" style="width: 100.0%; height: 100.0%;">Area Name: Royston Seaside/Royston Wrecks<br>Access Name: Marine Drive</div>`)[0];
+                popup_897551e8a5a007913114c70a9bd9fcee.setContent(html_da4c6f2b0a9377adad4f5ff504151a48);
+            
+        
+
+        circle_marker_dc75c094fb2afd20543f381f5c0f337a.bindPopup(popup_897551e8a5a007913114c70a9bd9fcee)
+        ;
+
+        
+    
+    
+            var circle_marker_78c58ce09ac86a0fa67e62b8195a24d5 = L.circleMarker(
+                [49.42472787, -124.6503753],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4, "stroke": true, "weight": 2}
+            ).addTo(map_c4dadd6ccf71e7604d6bb266fd898a6b);
+        
+    
+        var popup_90b7a91a76f796bb9333913f0a7c0fd1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_310ab7a9fd5de160f04f5d5c2a076f81 = $(`<div id="html_310ab7a9fd5de160f04f5d5c2a076f81" style="width: 100.0%; height: 100.0%;">Area Name: Nile Creek<br>Access Name: Gladys Road</div>`)[0];
+                popup_90b7a91a76f796bb9333913f0a7c0fd1.setContent(html_310ab7a9fd5de160f04f5d5c2a076f81);
+            
+        
+
+        circle_marker_78c58ce09ac86a0fa67e62b8195a24d5.bindPopup(popup_90b7a91a76f796bb9333913f0a7c0fd1)
+        ;
+
+        
+    
+</script>
+</html>
